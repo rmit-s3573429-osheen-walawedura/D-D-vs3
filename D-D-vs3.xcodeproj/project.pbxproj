@@ -15,6 +15,9 @@
 		80FE59A71F43507500E2D32A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FE59A51F43507500E2D32A /* LaunchScreen.storyboard */; };
 		80FE59B21F43507500E2D32A /* D_D_vs3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59B11F43507500E2D32A /* D_D_vs3Tests.swift */; };
 		80FE59BD1F43507500E2D32A /* D_D_vs3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59BC1F43507500E2D32A /* D_D_vs3UITests.swift */; };
+		80FE59CD1F4352E200E2D32A /* GeneralLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59CC1F4352E200E2D32A /* GeneralLocation.swift */; };
+		80FE59D11F4353D400E2D32A /* GeneralLocationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59D01F4353D400E2D32A /* GeneralLocationDetail.swift */; };
+		80FE59D31F43545200E2D32A /* Phandalin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80FE59D21F43545200E2D32A /* Phandalin.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		80FE59B81F43507500E2D32A /* D-D-vs3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "D-D-vs3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FE59BC1F43507500E2D32A /* D_D_vs3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_D_vs3UITests.swift; sourceTree = "<group>"; };
 		80FE59BE1F43507500E2D32A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80FE59CC1F4352E200E2D32A /* GeneralLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralLocation.swift; sourceTree = "<group>"; };
+		80FE59D01F4353D400E2D32A /* GeneralLocationDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralLocationDetail.swift; sourceTree = "<group>"; };
+		80FE59D21F43545200E2D32A /* Phandalin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Phandalin.jpg; path = ../../../../Downloads/Phandalin.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,12 @@
 		80FE59981F43507500E2D32A /* D-D-vs3 */ = {
 			isa = PBXGroup;
 			children = (
+				80FE59CA1F4351F500E2D32A /* Controllers */,
+				80FE59CB1F43520900E2D32A /* Models */,
 				80FE59991F43507500E2D32A /* AppDelegate.swift */,
-				80FE599B1F43507500E2D32A /* ViewController.swift */,
 				80FE599D1F43507500E2D32A /* Main.storyboard */,
 				80FE59A31F43507500E2D32A /* Assets.xcassets */,
+				80FE59D21F43545200E2D32A /* Phandalin.jpg */,
 				80FE59A51F43507500E2D32A /* LaunchScreen.storyboard */,
 				80FE59A81F43507500E2D32A /* Info.plist */,
 				80FE59A01F43507500E2D32A /* D_D_vs3.xcdatamodeld */,
@@ -126,6 +134,23 @@
 				80FE59BE1F43507500E2D32A /* Info.plist */,
 			);
 			path = "D-D-vs3UITests";
+			sourceTree = "<group>";
+		};
+		80FE59CA1F4351F500E2D32A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80FE599B1F43507500E2D32A /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		80FE59CB1F43520900E2D32A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				80FE59CC1F4352E200E2D32A /* GeneralLocation.swift */,
+				80FE59D01F4353D400E2D32A /* GeneralLocationDetail.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +266,7 @@
 				80FE59A71F43507500E2D32A /* LaunchScreen.storyboard in Resources */,
 				80FE59A41F43507500E2D32A /* Assets.xcassets in Resources */,
 				80FE599F1F43507500E2D32A /* Main.storyboard in Resources */,
+				80FE59D31F43545200E2D32A /* Phandalin.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +293,9 @@
 			files = (
 				80FE599C1F43507500E2D32A /* ViewController.swift in Sources */,
 				80FE599A1F43507500E2D32A /* AppDelegate.swift in Sources */,
+				80FE59D11F4353D400E2D32A /* GeneralLocationDetail.swift in Sources */,
 				80FE59A21F43507500E2D32A /* D_D_vs3.xcdatamodeld in Sources */,
+				80FE59CD1F4352E200E2D32A /* GeneralLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
