@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,7 +36,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="333.33333333333337" id="FQb-BQ-QYg"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -45,25 +46,24 @@
                                     <constraint firstAttribute="height" constant="238" id="p6q-jm-0w0"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRN-D3-ouP">
-                                <rect key="frame" x="164.5" y="396" width="47" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLY-qO-Yic">
+                                <rect key="frame" x="164.5" y="582" width="47" height="30"/>
                                 <state key="normal" title="Details"/>
                                 <connections>
-                                    <segue destination="ZSO-lq-Gfy" kind="show" id="KGD-LF-F2R"/>
+                                    <segue destination="ZSO-lq-Gfy" kind="show" id="zLR-EQ-cA1"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9tl-W2-xfS" firstAttribute="centerX" secondItem="X7K-Ue-nMl" secondAttribute="centerX" id="6Td-Az-bmY"/>
-                            <constraint firstItem="qRN-D3-ouP" firstAttribute="top" secondItem="9tl-W2-xfS" secondAttribute="top" constant="80" id="C28-CO-tbg"/>
+                            <constraint firstItem="vLY-qO-Yic" firstAttribute="centerX" secondItem="9tl-W2-xfS" secondAttribute="centerXWithinMargins" id="7Bi-TS-mil"/>
                             <constraint firstItem="nQM-Td-l0A" firstAttribute="top" secondItem="X7K-Ue-nMl" secondAttribute="bottom" constant="10" id="HLn-5e-Z6m"/>
                             <constraint firstItem="X7K-Ue-nMl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="JOo-BH-rrx"/>
-                            <constraint firstItem="9tl-W2-xfS" firstAttribute="top" secondItem="qRN-D3-ouP" secondAttribute="bottom" constant="-110" id="NdM-Hm-RCg"/>
                             <constraint firstItem="nQM-Td-l0A" firstAttribute="centerX" secondItem="X7K-Ue-nMl" secondAttribute="centerX" id="NkR-Nl-5P0"/>
                             <constraint firstAttribute="bottomMargin" secondItem="9tl-W2-xfS" secondAttribute="bottom" constant="-14" id="UUl-jm-Yg4"/>
                             <constraint firstItem="X7K-Ue-nMl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ave-SC-4RN"/>
-                            <constraint firstItem="qRN-D3-ouP" firstAttribute="centerX" secondItem="9tl-W2-xfS" secondAttribute="centerX" id="fWv-Ya-Vqy"/>
+                            <constraint firstItem="vLY-qO-Yic" firstAttribute="top" secondItem="9tl-W2-xfS" secondAttribute="bottomMargin" constant="-91" id="cIf-bH-Bk7"/>
                             <constraint firstItem="9tl-W2-xfS" firstAttribute="top" secondItem="nQM-Td-l0A" secondAttribute="bottom" constant="10" id="fkX-Dt-h6l"/>
                             <constraint firstItem="X7K-Ue-nMl" firstAttribute="leading" secondItem="9tl-W2-xfS" secondAttribute="leading" id="sea-f6-Bsp"/>
                         </constraints>
@@ -75,6 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
         <!--Specific Detail Controller-->
         <scene sceneID="04r-Vt-12E">
@@ -121,7 +122,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="sEp-Q3-tIh">
                                 <rect key="frame" x="21" y="467.5" width="333" height="117.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -158,6 +159,13 @@
                             <constraint firstItem="sEp-Q3-tIh" firstAttribute="leading" secondItem="AKj-dQ-AtX" secondAttribute="leading" id="wbD-dq-hAc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblAddress" destination="AKj-dQ-AtX" id="EdK-q8-M7H"/>
+                        <outlet property="lblName" destination="QUh-UH-mLI" id="SrT-Em-Lfr"/>
+                        <outlet property="lblOwner" destination="jmy-EX-kC7" id="krX-yd-rsd"/>
+                        <outlet property="lblType" destination="AAa-aK-JeC" id="gjR-Zz-7eB"/>
+                        <outlet property="txtDescription" destination="sEp-Q3-tIh" id="hGc-eh-fJ2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dog-Fj-x8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

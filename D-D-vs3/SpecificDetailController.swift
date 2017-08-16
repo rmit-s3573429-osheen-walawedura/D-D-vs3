@@ -13,7 +13,7 @@ class SpecificDetailController: UIViewController {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblType: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
-    @IBOutlet weak var lblOwner: UILabel!
+    @IBOutlet weak var lblOwner: UIButton!
     @IBOutlet weak var txtDescription: UITextView!
     
     // label for the Model
@@ -27,7 +27,7 @@ class SpecificDetailController: UIViewController {
         lblName.text = model.getName()
         lblType.text = model.getType()
         lblAddress.text = model.getAddress()
-        lblOwner.text = model.getOwner()
+        lblOwner.setTitle(model.getOwner(), for: [])
         txtDescription.text = model.getDesc()
     }
     

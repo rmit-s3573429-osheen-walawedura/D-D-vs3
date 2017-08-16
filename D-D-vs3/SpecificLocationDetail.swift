@@ -14,6 +14,9 @@ class SpecificLocationDetail {
     
     init()
     {
+        print ("Made")
+        print(locations[0])
+        print(locations[0].getName())
     }
     
     func getName() -> String
