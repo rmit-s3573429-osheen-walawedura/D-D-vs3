@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80EC43061F4443DD007D2937 /* SpecificLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EC43051F4443DD007D2937 /* SpecificLocation.swift */; };
+		80EC43081F4444F8007D2937 /* SpecificLocationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EC43071F4444F8007D2937 /* SpecificLocationDetail.swift */; };
+		80EC430A1F444667007D2937 /* SpecificDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EC43091F444667007D2937 /* SpecificDetailController.swift */; };
 		80FE599A1F43507500E2D32A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59991F43507500E2D32A /* AppDelegate.swift */; };
 		80FE599C1F43507500E2D32A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE599B1F43507500E2D32A /* ViewController.swift */; };
 		80FE599F1F43507500E2D32A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FE599D1F43507500E2D32A /* Main.storyboard */; };
@@ -17,7 +20,6 @@
 		80FE59BD1F43507500E2D32A /* D_D_vs3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59BC1F43507500E2D32A /* D_D_vs3UITests.swift */; };
 		80FE59CD1F4352E200E2D32A /* GeneralLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59CC1F4352E200E2D32A /* GeneralLocation.swift */; };
 		80FE59D11F4353D400E2D32A /* GeneralLocationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59D01F4353D400E2D32A /* GeneralLocationDetail.swift */; };
-		80FE59D31F43545200E2D32A /* Phandalin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80FE59D21F43545200E2D32A /* Phandalin.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80EC43051F4443DD007D2937 /* SpecificLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificLocation.swift; sourceTree = "<group>"; };
+		80EC43071F4444F8007D2937 /* SpecificLocationDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificLocationDetail.swift; sourceTree = "<group>"; };
+		80EC43091F444667007D2937 /* SpecificDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificDetailController.swift; sourceTree = "<group>"; };
 		80FE59961F43507500E2D32A /* D-D-vs3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D-D-vs3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FE59991F43507500E2D32A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80FE599B1F43507500E2D32A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +59,6 @@
 		80FE59BE1F43507500E2D32A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80FE59CC1F4352E200E2D32A /* GeneralLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralLocation.swift; sourceTree = "<group>"; };
 		80FE59D01F4353D400E2D32A /* GeneralLocationDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralLocationDetail.swift; sourceTree = "<group>"; };
-		80FE59D21F43545200E2D32A /* Phandalin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Phandalin.jpg; path = ../../../../Downloads/Phandalin.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +114,6 @@
 				80FE59991F43507500E2D32A /* AppDelegate.swift */,
 				80FE599D1F43507500E2D32A /* Main.storyboard */,
 				80FE59A31F43507500E2D32A /* Assets.xcassets */,
-				80FE59D21F43545200E2D32A /* Phandalin.jpg */,
 				80FE59A51F43507500E2D32A /* LaunchScreen.storyboard */,
 				80FE59A81F43507500E2D32A /* Info.plist */,
 				80FE59A01F43507500E2D32A /* D_D_vs3.xcdatamodeld */,
@@ -140,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				80FE599B1F43507500E2D32A /* ViewController.swift */,
+				80EC43091F444667007D2937 /* SpecificDetailController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -149,6 +153,8 @@
 			children = (
 				80FE59CC1F4352E200E2D32A /* GeneralLocation.swift */,
 				80FE59D01F4353D400E2D32A /* GeneralLocationDetail.swift */,
+				80EC43051F4443DD007D2937 /* SpecificLocation.swift */,
+				80EC43071F4444F8007D2937 /* SpecificLocationDetail.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -266,7 +272,6 @@
 				80FE59A71F43507500E2D32A /* LaunchScreen.storyboard in Resources */,
 				80FE59A41F43507500E2D32A /* Assets.xcassets in Resources */,
 				80FE599F1F43507500E2D32A /* Main.storyboard in Resources */,
-				80FE59D31F43545200E2D32A /* Phandalin.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80EC430A1F444667007D2937 /* SpecificDetailController.swift in Sources */,
+				80EC43081F4444F8007D2937 /* SpecificLocationDetail.swift in Sources */,
+				80EC43061F4443DD007D2937 /* SpecificLocation.swift in Sources */,
 				80FE599C1F43507500E2D32A /* ViewController.swift in Sources */,
 				80FE599A1F43507500E2D32A /* AppDelegate.swift in Sources */,
 				80FE59D11F4353D400E2D32A /* GeneralLocationDetail.swift in Sources */,
@@ -548,6 +556,7 @@
 				80FE59C31F43507500E2D32A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		80FE59C41F43507500E2D32A /* Build configuration list for PBXNativeTarget "D-D-vs3Tests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +565,7 @@
 				80FE59C61F43507500E2D32A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		80FE59C71F43507500E2D32A /* Build configuration list for PBXNativeTarget "D-D-vs3UITests" */ = {
 			isa = XCConfigurationList;
@@ -564,6 +574,7 @@
 				80FE59C91F43507500E2D32A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

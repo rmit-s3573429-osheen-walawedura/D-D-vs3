@@ -2,8 +2,8 @@
 //  GeneralLocations.swift
 //  D-D-vs3
 //
-//  Created by Osheen Walawedura on 16/8/17.
-//  Copyright © 2017 Osheen Walawedura. All rights reserved.
+//  Created by Nicole Renner on 16/8/17.
+//  Copyright © 2017 Nicole Renner. All rights reserved.
 //
 
 import Foundation
