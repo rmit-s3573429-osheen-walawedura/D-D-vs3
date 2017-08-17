@@ -10,14 +10,7 @@ import Foundation
 
 class SpecificLocationDetail {
     
-    var locations = [SpecificLocation(name:"Stonehill Inn",type:"Inn", address:"Somewhere in Phandalin", owner:"Toblen Stonehill", desc:"Toblen came from the east of the Triboar, seeking the opportunity in prospecting like many others. He soon found that he knew more about running an inn than mining, and so he established the inn.")]
-    
-    init()
-    {
-        print ("Made")
-        print(locations[0])
-        print(locations[0].getName())
-    }
+    var locations = [SpecificLocation(name:"Stonehill Inn",type:"Inn", address:"Somewhere in Phandalin", owner:"Toblen Stonehill", desc:"Toblen came from the east of the Triboar, seeking the opportunity in prospecting like many others. He soon found that he knew more about running an inn than mining, and so he established the inn.")]                 
     
     func getName() -> String
     {

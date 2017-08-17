@@ -23,7 +23,6 @@ class SpecificDetailController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         lblName.text = model.getName()
         lblType.text = model.getType()
         lblAddress.text = model.getAddress()
