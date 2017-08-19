@@ -15,16 +15,15 @@ class GeneralLocationViewController: UIViewController {
     
     @IBOutlet weak var lblDescription: UITextView!
     
-    // label for the Model
-    var model = GeneralLocationList.sharedInstance
+    var location: GeneralLocation?
     
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        lblName.text = model.getName()
-        lblDescription.text = model.getDesc()
+        lblName.text = location!.getName()
+        lblDescription.text = location!.getDesc()
     }
     
     // Lifecycle method for clearing up memory resources
@@ -35,4 +34,3 @@ class GeneralLocationViewController: UIViewController {
     }
     
 }
-

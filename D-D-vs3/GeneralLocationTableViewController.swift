@@ -42,4 +42,19 @@ class GeneralLocationTableViewController: UITableViewController
         return row!
         
     }
+    
+    override func prepare (for segue: UIStoryboardSegue, sender: Any?)
+    {
+        print("Fuck you")
+        // Grab the current card
+        let indexPath = self.tableView .indexPathForSelectedRow!
+        let card : GeneralLocation = model.locations[indexPath.item]
+        
+        // Set a property on the destination view controller
+        let detailsVC = segue.destination as! GeneralLocationViewController
+        
+        let destinationTitle = card.getName()
+        detailsVC.location = card
+    }
+
 }

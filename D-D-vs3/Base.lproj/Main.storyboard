@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1047" y="137"/>
+            <point key="canvasLocation" x="-204" y="289"/>
         </scene>
         <!--General Location Controller-->
         <scene sceneID="hmq-cD-TrO">
@@ -115,6 +115,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" id="y11-9d-cHQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -150,7 +153,6 @@
                 <splitViewController id="bOh-sy-9Ka" sceneMemberID="viewController">
                     <connections>
                         <segue destination="VEs-ZU-tNJ" kind="relationship" relationship="masterViewController" id="khF-bh-pPy"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="JDa-kl-8WP"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgf-M3-m6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dog-Fj-x8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127" y="136"/>
+            <point key="canvasLocation" x="949" y="324"/>
         </scene>
     </scenes>
     <resources>
