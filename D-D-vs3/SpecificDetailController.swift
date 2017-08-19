@@ -16,18 +16,17 @@ class SpecificDetailController: UIViewController {
     @IBOutlet weak var lblOwner: UIButton!
     @IBOutlet weak var txtDescription: UITextView!
     
-    // label for the Model
-    var model = SpecificLocationDetail()
+    var location: SpecificLocation?
     
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        lblName.text = model.getName()
-        lblType.text = model.getType()
-        lblAddress.text = model.getAddress()
-        lblOwner.setTitle(model.getOwner(), for: [])
-        txtDescription.text = model.getDesc()
+        lblName.text = location!.getName()
+        lblType.text = location!.getType()
+        lblAddress.text = location!.getAddress()
+        lblOwner.setTitle(location!.getOwner(), for: [])
+        txtDescription.text = location!.getDesc()
     }
     
     // Lifecycle method for clearing up memory resources

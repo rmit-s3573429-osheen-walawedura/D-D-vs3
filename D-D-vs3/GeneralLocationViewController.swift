@@ -33,4 +33,12 @@ class GeneralLocationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare (for segue: UIStoryboardSegue, sender: Any?)
+    {
+        print("Fuck you")
+        // Set a property on the destination view controller
+        let detailsVC = segue.destination as! SpecificLocationTableViewController
+        
+        detailsVC.model = location
+    }
 }
