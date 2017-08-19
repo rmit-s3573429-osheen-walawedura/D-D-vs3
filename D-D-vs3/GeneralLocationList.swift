@@ -32,15 +32,5 @@ class GeneralLocationList {
         return locations
     }
     
-    func getName()->String
-    {
-        return locations[0].getName()
-    }
-    
-    func getDesc() -> String {
-        return locations[0].getDesc()
-    }
-    
-    
 }
 
