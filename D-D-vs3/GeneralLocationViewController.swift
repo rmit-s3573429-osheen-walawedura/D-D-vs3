@@ -9,14 +9,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GeneralLocationViewController: UIViewController {
     // label for the Name of the location
     @IBOutlet weak var lblName: UITextField!
     
     @IBOutlet weak var lblDescription: UITextView!
     
     // label for the Model
-    var model = GeneralLocationDetail()
+    var model = GeneralLocationList.sharedInstance
     
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
