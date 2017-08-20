@@ -10,9 +10,9 @@ import UIKit
 
 class SpecificDetailController: UIViewController {
     // labels
-    @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblType: UILabel!
-    @IBOutlet weak var lblAddress: UILabel!
+    @IBOutlet weak var lblName: UITextField!
+    @IBOutlet weak var lblType: UITextField!
+    @IBOutlet weak var lblAddress: UITextField!
     @IBOutlet weak var lblOwner: UIButton!
     @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var img: UIImageView!
