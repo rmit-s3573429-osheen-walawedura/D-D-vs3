@@ -13,15 +13,18 @@ class SpecificLocation {
     var locationName: String
     var locationType: String
     var locationAddress: String
-    var locationOwner: String
+    var locationOwner:Character?
     var locationDesc: String
     
-    init(name: String, type: String, address: String, owner: String, desc: String) {
+    init(name: String, type: String, address: String, desc: String) {
         locationName = name
         locationType = type
         locationAddress = address
-        locationOwner = owner
         locationDesc = desc
+    }
+    
+    func assignOwner(character: Character) {
+        locationOwner = character
     }
     
     func getName() -> String {
@@ -36,8 +39,8 @@ class SpecificLocation {
         return locationAddress
     }
     
-    func getOwner() -> String{
-        return locationOwner
+    func getOwner() -> Character{
+        return locationOwner!
     }
     
     func getDesc() -> String {

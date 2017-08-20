@@ -25,7 +25,7 @@ class SpecificDetailController: UIViewController {
         lblName.text = location!.getName()
         lblType.text = location!.getType()
         lblAddress.text = location!.getAddress()
-        lblOwner.setTitle(location!.getOwner(), for: [])
+        lblOwner.setTitle(location!.getOwner().characterName, for: [])
         txtDescription.text = location!.getDesc()
     }
     

@@ -19,35 +19,66 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /* Get references to all of our controllers so we can set the intial data */
         let tabBarController = self.window!.rootViewController as! UITabBarController
         
-        /* This is the controller on the second tab, so we use the index of 1 */
-        let splitViewController = tabBarController.viewControllers![0] as! UISplitViewController
+        /* This is the controller on the first tab, so we use the index of 0 */
+        let locationSplitViewController = tabBarController.viewControllers![0] as! UISplitViewController
         
         /* The split view controller has two navigation controllers, the first one is for the Master View, the second one is for the Detail View */
-        let navControllerForMasterView = splitViewController.viewControllers.first as! UINavigationController
-        let navControllerFordetailViewController = splitViewController.viewControllers.last as! UINavigationController
+        let locationNavControllerForMasterView = locationSplitViewController.viewControllers.first as! UINavigationController
+        let locationNavControllerFordetailViewController = locationSplitViewController.viewControllers.last as! UINavigationController
         
         /* The table view controller is the first or top controller of the nav controller for the master view */
-        let masterViewController = navControllerForMasterView.topViewController as! GeneralLocationTableViewController
+        let locationMasterViewController = locationNavControllerForMasterView.topViewController as! GeneralLocationTableViewController
         
         /* The detail view controller is the first or top controller of the nav controller for detail view */
-        let detailViewController = navControllerFordetailViewController.topViewController as! GeneralLocationViewController
+        let locationDetailViewController = locationNavControllerFordetailViewController.topViewController as! GeneralLocationViewController
         
-        /* Grab a default card from the model */
-        let defaultCard = GeneralLocationList.sharedInstance.locations[0]
+        /* Grab a default location from the model */
+        let defaultLocation = GeneralLocationList.sharedInstance.locations[0]
         
         /* Set this as the default card to display in both the table view and detail view */
-        masterViewController.currentLocation = defaultCard
-        detailViewController.currentLocation = defaultCard
+        locationMasterViewController.currentLocation = defaultLocation
+        locationDetailViewController.currentLocation = defaultLocation
         
         /* Set the delegate in the table view to point to the detail view */
-        masterViewController.delegate = detailViewController
+        locationMasterViewController.delegate = locationDetailViewController
         
         /* Because each of the navigation controllers are working independently of each other, we need to set up the navigation buttons manually.*/
-        detailViewController.navigationItem.leftItemsSupplementBackButton = true
-        detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        locationDetailViewController.navigationItem.leftItemsSupplementBackButton = true
+        locationDetailViewController.navigationItem.leftBarButtonItem = locationSplitViewController.displayModeButtonItem
+
+        //SET-UP OF TAB 2
+        
+        /* This is the controller on the second tab, so we use the index of 1 */
+        let characterSplitViewController = tabBarController.viewControllers![1] as! UISplitViewController
+        
+        /* The split view controller has two navigation controllers, the first one is for the Master View, the second one is for the Detail View */
+        let characterNavControllerForMasterView = characterSplitViewController.viewControllers.first as! UINavigationController
+        let characterNavControllerFordetailViewController = characterSplitViewController.viewControllers.last as! UINavigationController
+        
+        /* The table view controller is the first or top controller of the nav controller for the master view */
+        let characterMasterViewController = characterNavControllerForMasterView.topViewController as! CharacterListController
+        
+        /* The detail view controller is the first or top controller of the nav controller for detail view */
+        let characterDetailViewController = characterNavControllerFordetailViewController.topViewController as! CharacterDetailController
+        
+        /* Grab a default location from the model */
+        let defaultCharacter = CharacterList.sharedInstance.characters[0]
+        
+        /* Set this as the default card to display in both the table view and detail view */
+        characterMasterViewController.currentCharacter = defaultCharacter
+        characterDetailViewController.currentCharacter = defaultCharacter
+        
+        /* Set the delegate in the table view to point to the detail view */
+        characterMasterViewController.delegate = characterDetailViewController
+        
+        /* Because each of the navigation controllers are working independently of each other, we need to set up the navigation buttons manually.*/
+        characterDetailViewController.navigationItem.leftItemsSupplementBackButton = true
+        characterDetailViewController.navigationItem.leftBarButtonItem = characterSplitViewController.displayModeButtonItem
+        
         return true
 
     }
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
