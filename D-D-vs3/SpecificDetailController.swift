@@ -15,6 +15,7 @@ class SpecificDetailController: UIViewController {
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lblOwner: UIButton!
     @IBOutlet weak var txtDescription: UITextView!
+    @IBOutlet weak var img: UIImageView!
     
     var location: SpecificLocation?
     
@@ -27,6 +28,7 @@ class SpecificDetailController: UIViewController {
         lblAddress.text = location!.getAddress()
         lblOwner.setTitle(location!.getOwner().characterName, for: [])
         txtDescription.text = location!.getDesc()
+        img.image = UIImage(named: location!.imageName)
     }
     
     // Lifecycle method for clearing up memory resources

@@ -15,12 +15,15 @@ class Character {
     var characterLocation: SpecificLocation
     var characterDescription: String
     var characterRolePlayNotes: String
+    var imageName: String
     
-    init(name: String, species: String, location: SpecificLocation, desc: String, notes: String) {
+    init(name: String, species: String, location: SpecificLocation, desc: String, notes: String, image: String) {
         characterName = name
         characterSpecies = species
         characterLocation = location
         characterDescription = desc
         characterRolePlayNotes = notes
+        imageName = image
+        location.assignOwner(character: self)
     }
 }

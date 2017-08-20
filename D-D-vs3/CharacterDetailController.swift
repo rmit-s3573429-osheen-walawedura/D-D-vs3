@@ -15,6 +15,7 @@ class CharacterDetailController: UIViewController {
     @IBOutlet weak var lblSpecificLocation: UILabel!
     @IBOutlet weak var lblNotes: UITextView!
     @IBOutlet weak var txtDescription: UITextView!
+    @IBOutlet weak var img: UIImageView!
     
     var currentCharacter: Character?
     
@@ -28,6 +29,7 @@ class CharacterDetailController: UIViewController {
         lblSpecificLocation.text = currentCharacter?.characterLocation.getName()
         lblNotes.text = currentCharacter?.characterRolePlayNotes
         txtDescription.text = currentCharacter?.characterDescription
+        img.image = UIImage(named: (currentCharacter?.imageName)!)
     }
     
     // Lifecycle method for clearing up memory resources
@@ -45,5 +47,6 @@ extension CharacterDetailController: RefreshCharacter {
         self.lblSpecies.text = character.characterSpecies
         self.lblNotes.text = character.characterRolePlayNotes
         self.lblSpecificLocation.text = character.characterLocation.getName()
+        self.img.image = UIImage(named: (character.imageName))
 }
 }

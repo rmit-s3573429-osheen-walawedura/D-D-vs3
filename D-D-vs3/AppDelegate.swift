@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        setUpData()
+        
         /* Get references to all of our controllers so we can set the intial data */
         let tabBarController = self.window!.rootViewController as! UITabBarController
         
@@ -77,6 +80,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
 
+    }
+    
+    func setUpData() {
+        GeneralLocationList.sharedInstance.addNewGeneralLocation(name:"Phandalin",desc:"The town consisted of forty or fifty simple log buildings, some build on old fieldstone foundations. More old ruins - crumbling stone walls covered in ivy and briars - surround the newer buildings.", image:"phandalin")
+        var location1: GeneralLocation = GeneralLocationList.sharedInstance.locations[0]
+        location1.addNewLocation(name:"Stonehill Inn", type:"Inn", address:"Somewhere in Phandalin", desc:"Toblen came from the east of the Triboar, seeking the opportunity in prospecting like many others. He soon found that he knew more about running an inn than mining, and so he established the inn.", image:"inn")
+        var character1 = Character(name: "Aram Silverheart", species: "Human", location: location1.specificlocations[0], desc: "An old human, bent and bowed. He carries a walking stick in his left hand, but something suggests he might use it for more than walking", notes: "Gruff voice. Likes carpentry.", image:"human_male")
+        CharacterList.sharedInstance.addCharacterToList(char: character1)
+        GeneralLocationList.sharedInstance.locations[0].addNewLocation(name:"The Sleeping Giant", type:"Tavern", address:"Somewhere in Phandalin", desc:"An old crumbling stone building with boarded up windows.",image:"inn")
+        var character2 = Character(name: "Gundren Rockseeker", species: "Dwarf", location: location1.specificlocations[1], desc: "An dwarf in the prime of his life.", notes: "Gruff voice. Likes carpentry.",image:"dwarf_male")
+        CharacterList.sharedInstance.addCharacterToList(char: character2)
+        
+        
     }
     
     

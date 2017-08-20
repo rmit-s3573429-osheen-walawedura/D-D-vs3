@@ -39,7 +39,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tl-W2-xfS" userLabel="Description">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tl-W2-xfS" userLabel="Description">
                                 <rect key="frame" x="25" y="309" width="364" height="289"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </string>
@@ -107,6 +107,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="HjZ-yE-q8o"/>
                     <connections>
+                        <outlet property="img" destination="X7K-Ue-nMl" id="rPN-bI-P45"/>
                         <outlet property="lblDescription" destination="9tl-W2-xfS" id="svD-Cd-JZI"/>
                         <outlet property="lblName" destination="nQM-Td-l0A" id="WRw-0M-QUO"/>
                     </connections>
@@ -265,6 +266,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ee0-qe-ymR"/>
                     <connections>
+                        <outlet property="img" destination="BA6-dw-fwk" id="sbM-CW-xne"/>
                         <outlet property="lblName" destination="bW5-e2-zOK" id="Xt7-1Z-7QB"/>
                         <outlet property="lblNotes" destination="pbO-ZY-y4f" id="33b-gh-Lkt"/>
                         <outlet property="lblSpecies" destination="UTf-Wz-ngm" id="uPV-fJ-nsk"/>
@@ -403,10 +405,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="sEp-Q3-tIh">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="sEp-Q3-tIh">
                                 <rect key="frame" x="25" y="378" width="365" height="353"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -438,6 +440,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Characters" id="hfi-WL-NvT"/>
                     <connections>
+                        <outlet property="img" destination="MAW-zo-xde" id="u7C-3M-AXC"/>
                         <outlet property="lblAddress" destination="AKj-dQ-AtX" id="EdK-q8-M7H"/>
                         <outlet property="lblName" destination="QUh-UH-mLI" id="SrT-Em-Lfr"/>
                         <outlet property="lblOwner" destination="jmy-EX-kC7" id="krX-yd-rsd"/>

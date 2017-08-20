@@ -15,12 +15,14 @@ class SpecificLocation {
     var locationAddress: String
     var locationOwner:Character?
     var locationDesc: String
+    var imageName: String
     
-    init(name: String, type: String, address: String, desc: String) {
+    init(name: String, type: String, address: String, desc: String, image: String) {
         locationName = name
         locationType = type
         locationAddress = address
         locationDesc = desc
+        imageName = image
     }
     
     func assignOwner(character: Character) {

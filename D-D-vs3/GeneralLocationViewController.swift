@@ -9,11 +9,13 @@
 
 import UIKit
 
-class GeneralLocationViewController: UIViewController {
+class GeneralLocationViewController: UIViewController, UITextViewDelegate {
     // label for the Name of the location
     @IBOutlet weak var lblName: UITextField!
     
     @IBOutlet weak var lblDescription: UITextView!
+    
+    @IBOutlet weak var img: UIImageView?
     
     var currentLocation: GeneralLocation?
     
@@ -21,9 +23,11 @@ class GeneralLocationViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+ //       textView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
-            lblName.text = currentLocation!.getName()
-            lblDescription.text = currentLocation!.getDesc()
+        lblName.text = currentLocation!.getName()
+        lblDescription.text = currentLocation!.getDesc()
+        img?.image = UIImage(named:currentLocation!.imageName)
     }
     
     // Lifecycle method for clearing up memory resources
@@ -40,11 +44,17 @@ class GeneralLocationViewController: UIViewController {
         
         detailsVC.model = currentLocation
     }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let maxCharacter: Int = 300
+        return (textView.text?.utf16.count ?? 0) + text.utf16.count - range.length <= maxCharacter
+    }
 }
 
 extension GeneralLocationViewController: Refresh {
     func refresh (location: GeneralLocation) {
         self.lblName.text = location.locationName
         self.lblDescription.text = location.getDesc()
+        img?.image = UIImage(named:currentLocation!.imageName)
     }
 }
