@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol Refresh {
+    func refresh (location: GeneralLocation)
+}
+
 class GeneralLocationTableViewController: UITableViewController, UISearchResultsUpdating
 {
     var model = GeneralLocationList.sharedInstance
@@ -17,6 +21,9 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
     
     let searchController = UISearchController (searchResultsController: nil)
     
+    var currentLocation: GeneralLocation?
+    
+    var delegate: Refresh?
     
     //    var generalLocation = GeneralLocationDetail().getName()
     
@@ -55,26 +62,25 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
     
     override func prepare (for segue: UIStoryboardSegue, sender: Any?)
     {
-        print("Fuck you")
-        // Grab the current card
+        // Grab the current location
         let indexPath = self.tableView.indexPathForSelectedRow!
-        let card : GeneralLocation = changeDataSource(indexPath: indexPath as NSIndexPath)
+        let chosenLocation : GeneralLocation = changeDataSource(indexPath: indexPath as NSIndexPath)
         
         // Set a property on the destination view controller
         let detailsVC = segue.destination as! GeneralLocationViewController
         
-        detailsVC.location = card
+        detailsVC.currentLocation = chosenLocation
     }
     
     func changeDataSource(indexPath: NSIndexPath) -> GeneralLocation {
-        var card: GeneralLocation
+        var chosenLocation: GeneralLocation
         if searchController.isActive && searchController.searchBar.text != "" {
-            card = filteredLocations[indexPath.row]
+            chosenLocation = filteredLocations[indexPath.row]
         }
         else {
-            card = model.locations[indexPath.row]
+            chosenLocation = model.locations[indexPath.row]
         }
-        return card
+        return chosenLocation
     }
     
     func updateSearchResults(for: UISearchController) {
@@ -88,5 +94,23 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
         }
         tableView.reloadData()
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        currentLocation = self.model.locations[indexPath.row]
+        
+        // This points to our detail View controller so we are setting the property on the detail view
+        // when we select a card in our master view.
+        self.delegate?.refresh(location: currentLocation!)
+        
+        // This is needed for when displayed in portrait and you need show the detail
+        // view as a result of selecting an item.
+        if let detailViewController = self.delegate as? GeneralLocationViewController {
+            splitViewController?.showDetailViewController(detailViewController.navigationController!, sender: nil)
+        }
+    }
+    
+    
+
 
 }

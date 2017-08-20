@@ -55,14 +55,14 @@ class SpecificLocationTableViewController: UITableViewController, UISearchResult
     }
     
     func changeDataSource(indexPath: NSIndexPath) -> SpecificLocation {
-        var card: SpecificLocation
+        var chosenLocation: SpecificLocation
         if searchController.isActive && searchController.searchBar.text != "" {
-            card = filteredLocations[indexPath.row]
+            chosenLocation = filteredLocations[indexPath.row]
         }
         else {
-            card = model!.specificlocations[indexPath.row]
+            chosenLocation = model!.specificlocations[indexPath.row]
         }
-        return card
+        return chosenLocation
     }
     
     func updateSearchResults(for: UISearchController) {
@@ -79,14 +79,13 @@ class SpecificLocationTableViewController: UITableViewController, UISearchResult
     
     override func prepare (for segue: UIStoryboardSegue, sender: Any?)
     {
-        print("Fuck you")
         // Grab the current card
         let indexPath = self.tableView.indexPathForSelectedRow!
-        let card : SpecificLocation = changeDataSource(indexPath: indexPath as NSIndexPath)
+        let chosenLocation : SpecificLocation = changeDataSource(indexPath: indexPath as NSIndexPath)
         
         // Set a property on the destination view controller
         let detailsVC = segue.destination as! SpecificDetailController
         
-        detailsVC.location = card
+        detailsVC.location = chosenLocation
     }
 }

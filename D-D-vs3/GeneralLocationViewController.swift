@@ -15,15 +15,15 @@ class GeneralLocationViewController: UIViewController {
     
     @IBOutlet weak var lblDescription: UITextView!
     
-    var location: GeneralLocation?
+    var currentLocation: GeneralLocation?
     
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        lblName.text = location!.getName()
-        lblDescription.text = location!.getDesc()
+            lblName.text = currentLocation!.getName()
+            lblDescription.text = currentLocation!.getDesc()
     }
     
     // Lifecycle method for clearing up memory resources
@@ -35,10 +35,16 @@ class GeneralLocationViewController: UIViewController {
     
     override func prepare (for segue: UIStoryboardSegue, sender: Any?)
     {
-        print("Fuck you")
         // Set a property on the destination view controller
         let detailsVC = segue.destination as! SpecificLocationTableViewController
         
-        detailsVC.model = location
+        detailsVC.model = currentLocation
+    }
+}
+
+extension GeneralLocationViewController: Refresh {
+    func refresh (location: GeneralLocation) {
+        self.lblName.text = location.locationName
+        self.lblDescription.text = location.getDesc()
     }
 }
