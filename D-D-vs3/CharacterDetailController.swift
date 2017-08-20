@@ -10,9 +10,9 @@ import UIKit
 
 class CharacterDetailController: UIViewController {
     // labels
-    @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblSpecies: UILabel!
-    @IBOutlet weak var lblSpecificLocation: UILabel!
+    @IBOutlet weak var lblName: UITextField!
+    @IBOutlet weak var lblSpecies: UITextField!
+    @IBOutlet weak var lblSpecificLocation: UITextField!
     @IBOutlet weak var lblNotes: UITextView!
     @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var img: UIImageView!
