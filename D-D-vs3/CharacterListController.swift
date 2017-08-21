@@ -52,6 +52,8 @@ class CharacterListController: UITableViewController, UISearchResultsUpdating
         
         // Configure the cell
         row?.textLabel!.text = character.characterName
+        row?.detailTextLabel!.text = character.characterSpecies
+        row?.imageView?.image = UIImage(named: character.imageName)
         row?.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         
         return row!

@@ -11,13 +11,15 @@ import Foundation
 class GeneralLocation {
     
     var locationName: String
+    var locationType: String
     var locationDesc: String
     var imageName: String
     
     var specificlocations: [SpecificLocation] = []
     
-    init(name: String, desc: String, image: String) {
+    init(name: String, type: String, desc: String, image: String) {
         locationName = name
+        locationType = type
         locationDesc = desc
         imageName = image
     }

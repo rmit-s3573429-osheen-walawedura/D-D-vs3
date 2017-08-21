@@ -28,8 +28,8 @@ class GeneralLocationList {
         
     }
     
-    func addNewGeneralLocation(name: String, desc: String, image: String) {
-        locations.append(GeneralLocation(name: name, desc: desc, image: image))
+    func addNewGeneralLocation(name: String, type: String, desc: String, image: String) {
+        locations.append(GeneralLocation(name: name, type: type, desc: desc, image: image))
     }
     
     func getListOfGeneralLocations() -> [GeneralLocation] {

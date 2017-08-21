@@ -48,6 +48,8 @@ class SpecificLocationTableViewController: UITableViewController, UISearchResult
         
         // Configure the cell
         row?.textLabel!.text = location.getName()
+        row?.detailTextLabel!.text = location.getType()
+        row?.imageView?.image = UIImage(named: location.imageName)
         row?.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         
         return row!

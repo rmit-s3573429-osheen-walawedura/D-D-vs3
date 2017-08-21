@@ -26,7 +26,7 @@ class SpecificDetailController: UIViewController {
         lblName.text = location!.getName()
         lblType.text = location!.getType()
         lblAddress.text = location!.getAddress()
-        lblOwner.setTitle(location!.getOwner().characterName, for: [])
+        lblOwner.setTitle("Owned by: " + location!.getOwner().characterName, for: [])
         txtDescription.text = location!.getDesc()
         img.image = UIImage(named: location!.imageName)
     }

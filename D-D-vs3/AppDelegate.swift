@@ -83,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setUpData() {
-        GeneralLocationList.sharedInstance.addNewGeneralLocation(name:"Phandalin",desc:"The town consisted of forty or fifty simple log buildings, some build on old fieldstone foundations. More old ruins - crumbling stone walls covered in ivy and briars - surround the newer buildings.", image:"phandalin")
+        GeneralLocationList.sharedInstance.addNewGeneralLocation(name:"Phandalin",type:"City",desc:"The town consisted of forty or fifty simple log buildings, some build on old fieldstone foundations. More old ruins - crumbling stone walls covered in ivy and briars - surround the newer buildings.", image:"phandalin")
         var location1: GeneralLocation = GeneralLocationList.sharedInstance.locations[0]
         location1.addNewLocation(name:"Stonehill Inn", type:"Inn", address:"Somewhere in Phandalin", desc:"Toblen came from the east of the Triboar, seeking the opportunity in prospecting like many others. He soon found that he knew more about running an inn than mining, and so he established the inn.", image:"inn")
         var character1 = Character(name: "Aram Silverheart", species: "Human", location: location1.specificlocations[0], desc: "An old human, bent and bowed. He carries a walking stick in his left hand, but something suggests he might use it for more than walking", notes: "Gruff voice. Likes carpentry.", image:"human_male")

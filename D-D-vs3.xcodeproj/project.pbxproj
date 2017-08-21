@@ -13,6 +13,7 @@
 		803B400E1F4939E4009FA510 /* CharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B400D1F4939E4009FA510 /* CharacterList.swift */; };
 		803B40101F49409B009FA510 /* CharacterDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B400F1F49409B009FA510 /* CharacterDetailController.swift */; };
 		803B40121F49422C009FA510 /* CharacterListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B40111F49422C009FA510 /* CharacterListController.swift */; };
+		803B40141F4A88CC009FA510 /* SpeciesPopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B40131F4A88CC009FA510 /* SpeciesPopUpController.swift */; };
 		80EC43061F4443DD007D2937 /* SpecificLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EC43051F4443DD007D2937 /* SpecificLocation.swift */; };
 		80EC430A1F444667007D2937 /* SpecificDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EC43091F444667007D2937 /* SpecificDetailController.swift */; };
 		80FE599A1F43507500E2D32A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59991F43507500E2D32A /* AppDelegate.swift */; };
@@ -51,6 +52,7 @@
 		803B400D1F4939E4009FA510 /* CharacterList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterList.swift; sourceTree = "<group>"; };
 		803B400F1F49409B009FA510 /* CharacterDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailController.swift; sourceTree = "<group>"; };
 		803B40111F49422C009FA510 /* CharacterListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListController.swift; sourceTree = "<group>"; };
+		803B40131F4A88CC009FA510 /* SpeciesPopUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeciesPopUpController.swift; sourceTree = "<group>"; };
 		80EC43051F4443DD007D2937 /* SpecificLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificLocation.swift; sourceTree = "<group>"; };
 		80EC43091F444667007D2937 /* SpecificDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificDetailController.swift; sourceTree = "<group>"; };
 		80FE59961F43507500E2D32A /* D-D-vs3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D-D-vs3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				803B40091F487151009FA510 /* SpecificLocationTableViewController.swift */,
 				803B400F1F49409B009FA510 /* CharacterDetailController.swift */,
 				803B40111F49422C009FA510 /* CharacterListController.swift */,
+				803B40131F4A88CC009FA510 /* SpeciesPopUpController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				80FE599A1F43507500E2D32A /* AppDelegate.swift in Sources */,
 				80FE59D11F4353D400E2D32A /* GeneralLocationList.swift in Sources */,
 				80FE59A21F43507500E2D32A /* D_D_vs3.xcdatamodeld in Sources */,
+				803B40141F4A88CC009FA510 /* SpeciesPopUpController.swift in Sources */,
 				80FE59CD1F4352E200E2D32A /* GeneralLocation.swift in Sources */,
 				803B400C1F493848009FA510 /* Character.swift in Sources */,
 				803B400A1F487151009FA510 /* SpecificLocationTableViewController.swift in Sources */,

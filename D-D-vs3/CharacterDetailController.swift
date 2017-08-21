@@ -11,7 +11,7 @@ import UIKit
 class CharacterDetailController: UIViewController {
     // labels
     @IBOutlet weak var lblName: UITextField!
-    @IBOutlet weak var lblSpecies: UITextField!
+    @IBOutlet weak var lblSpecies: UIButton!
     @IBOutlet weak var lblSpecificLocation: UITextField!
     @IBOutlet weak var lblNotes: UITextView!
     @IBOutlet weak var txtDescription: UITextView!
@@ -25,7 +25,7 @@ class CharacterDetailController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         lblName.text = currentCharacter?.characterName
-        lblSpecies.text = currentCharacter?.characterSpecies
+        lblSpecies.setTitle(currentCharacter?.characterSpecies, for: [])
         lblSpecificLocation.text = currentCharacter?.characterLocation.getName()
         lblNotes.text = currentCharacter?.characterRolePlayNotes
         txtDescription.text = currentCharacter?.characterDescription
@@ -44,7 +44,7 @@ extension CharacterDetailController: RefreshCharacter {
     func refresh (character: Character) {
         self.lblName.text = character.characterName
         self.txtDescription.text = character.characterDescription
-        self.lblSpecies.text = character.characterSpecies
+        self.lblSpecies.setTitle(character.characterSpecies, for: [])
         self.lblNotes.text = character.characterRolePlayNotes
         self.lblSpecificLocation.text = character.characterLocation.getName()
         self.img.image = UIImage(named: (character.imageName))

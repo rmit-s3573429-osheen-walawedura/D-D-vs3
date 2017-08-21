@@ -54,6 +54,8 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
         
         // Configure the cell
         row?.textLabel!.text = location.getName()
+        row?.detailTextLabel!.text = location.locationType
+        row?.imageView?.image = UIImage(named: location.imageName)
         row?.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         
         return row!
