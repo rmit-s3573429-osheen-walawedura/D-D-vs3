@@ -282,6 +282,11 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2r-YY-fRD">
                                                 <rect key="frame" x="0.0" y="33" width="414" height="33"/>
                                                 <state key="normal" title="Species"/>
+                                                <connections>
+                                                    <segue destination="wy0-Ic-24c" kind="popoverPresentation" popoverAnchorView="G2r-YY-fRD" id="Xnn-X9-New">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Location" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q4Z-Jo-Qz7">
                                                 <rect key="frame" x="0.0" y="66" width="414" height="33"/>
@@ -314,6 +319,7 @@
                                                             <constraint firstAttribute="width" constant="207" id="LhA-2O-RMd"/>
                                                             <constraint firstAttribute="height" constant="33" id="wk9-m9-c8X"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Edit">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
@@ -321,6 +327,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dH-gB-T05">
                                                         <rect key="frame" x="207" y="0.0" width="207" height="33"/>
                                                         <color key="backgroundColor" red="0.22652111520000001" green="0.27415254020000002" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Delete">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
