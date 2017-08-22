@@ -363,7 +363,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Ee0-qe-ymR"/>
                     <connections>
-                        <outlet property="img" destination="0BS-Jn-Tu9" id="cHV-mc-1nG"/>
+                        <outlet property="img" destination="0BS-Jn-Tu9" id="sOn-fB-gda"/>
                         <outlet property="lblName" destination="LL4-zT-uIG" id="2Ra-Vb-Nq7"/>
                         <outlet property="lblNotes" destination="xci-tW-O9j" id="toD-ax-zPg"/>
                         <outlet property="lblSpecies" destination="G2r-YY-fRD" id="imV-pq-GXI"/>
