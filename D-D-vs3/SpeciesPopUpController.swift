@@ -28,4 +28,8 @@ class SpeciesPopUpController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func dismiss (_sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
