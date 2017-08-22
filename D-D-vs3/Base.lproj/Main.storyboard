@@ -86,7 +86,7 @@
                                                             <constraint firstAttribute="width" constant="207" id="kyv-j1-4I6"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="Add">
+                                                        <state key="normal" title="Edit">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                     </button>
@@ -290,17 +290,17 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t9i-lu-2AX">
-                                                <rect key="frame" x="0.0" y="99" width="414" height="127"/>
+                                                <rect key="frame" x="0.0" y="99" width="414" height="88"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="88" id="ZN1-no-GbY"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Notes" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xci-tW-O9j">
-                                                <rect key="frame" x="0.0" y="226" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="187" width="414" height="89"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="3r0-bk-Hk8"/>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -335,7 +335,9 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="G2r-YY-fRD" firstAttribute="height" secondItem="LL4-zT-uIG" secondAttribute="height" id="6uE-ap-2ft"/>
+                                            <constraint firstAttribute="width" secondItem="q7t-p4-b8v" secondAttribute="height" multiplier="138:103" id="cR2-hF-h4e"/>
                                             <constraint firstItem="q4Z-Jo-Qz7" firstAttribute="height" secondItem="LL4-zT-uIG" secondAttribute="height" id="nqx-hJ-IGW"/>
+                                            <constraint firstItem="e8j-Lb-jTS" firstAttribute="top" secondItem="xci-tW-O9j" secondAttribute="bottom" id="tCP-Dv-UVf"/>
                                             <constraint firstItem="k9O-7W-iKn" firstAttribute="height" secondItem="LL4-zT-uIG" secondAttribute="height" id="vwY-Df-vQW"/>
                                         </constraints>
                                     </stackView>
@@ -563,7 +565,7 @@
                                                             <constraint firstAttribute="width" constant="207" id="hy3-vS-JfF"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="Add">
+                                                        <state key="normal" title="Edit">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
