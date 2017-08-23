@@ -164,7 +164,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="dragonborn_female" id="UXq-St-r0f">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="dragonborn_female" id="UXq-St-r0f">
                                             <rect key="frame" x="15" y="0.0" width="35" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
@@ -482,7 +482,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="dragonborn_female" id="uTB-vM-FDb">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="dragonborn_female" id="uTB-vM-FDb">
                                             <rect key="frame" x="15" y="0.0" width="35" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
@@ -621,7 +621,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vay-iu-usN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-926" y="1049"/>
+            <point key="canvasLocation" x="-926" y="1136"/>
         </scene>
         <!--Species Pop Up Controller-->
         <scene sceneID="GVj-2Y-N0k">

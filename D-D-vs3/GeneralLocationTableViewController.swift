@@ -34,6 +34,9 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
+        let tableViewFooter = UIButton(frame: CGRect(x:0, y:0, width: 600, height: 50))
+        tableViewFooter.backgroundColor = UIColor.green
+        tableView.tableFooterView = tableViewFooter
     }
     
     //returning the number of items in the array to populate tablerows
@@ -111,8 +114,5 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
             splitViewController?.showDetailViewController(detailViewController.navigationController!, sender: nil)
         }
     }
-    
-    
-
 
 }
