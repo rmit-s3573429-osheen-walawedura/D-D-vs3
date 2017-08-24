@@ -21,11 +21,10 @@ class GeneralLocationList {
         return Static.instance!
     }
     
-    var locations: [GeneralLocation] = []
-    
+    var locations: Array<GeneralLocation> = []
+
     private init()
     {
-        
     }
     
     func addNewGeneralLocation(name: String, type: String, desc: String, image: String) {
@@ -36,5 +35,16 @@ class GeneralLocationList {
         return locations
     }
     
+}
+
+extension Array where Element: Equatable {
+    
+    mutating func remove(object: Element) {
+        
+        if let index = index(of: object) {
+            
+            remove(at: index)
+        }
+    }
 }
 

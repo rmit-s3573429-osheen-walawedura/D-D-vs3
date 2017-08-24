@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GeneralLocation {
+class GeneralLocation: Equatable {
     
     var locationName: String
     var locationType: String
@@ -34,6 +34,15 @@ class GeneralLocation {
     
     func getDesc() -> String {
         return locationDesc
+    }
+    
+    func changeInformation(name: String, desc: String) {
+        locationDesc = desc
+        locationName = name
+    }
+    
+    static func ==(location: GeneralLocation, place: GeneralLocation) -> Bool {
+        return ObjectIdentifier(location) == ObjectIdentifier(place)
     }
     
 }

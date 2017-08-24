@@ -17,17 +17,29 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var img: UIImageView?
     
+    @IBOutlet weak var editButton: UIButton!
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
     var currentLocation: GeneralLocation?
+    
+    var isEdit = false
+    
+    var tableController: GeneralLocationTableViewController!
     
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {
         super.viewDidLoad()
- //       textView.delegate = self
+        // textView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         lblName.text = currentLocation!.getName()
+        lblName.isUserInteractionEnabled = false
         lblDescription.text = currentLocation!.getDesc()
+        lblDescription.isUserInteractionEnabled = false
         img?.image = UIImage(named:currentLocation!.imageName)
+        checkWhetherDeleteIsEnabled()
+        
     }
     
     // Lifecycle method for clearing up memory resources
@@ -37,12 +49,41 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare (for segue: UIStoryboardSegue, sender: Any?)
+    // Respond to the user clicking a button by providing advice from the oracle
+    @IBAction func edit(sender: UIButton)
     {
-        // Set a property on the destination view controller
-        let detailsVC = segue.destination as! SpecificLocationTableViewController
-        
-        detailsVC.model = currentLocation
+        if isEdit == false {
+        editButton.setTitle("Confirm", for: [])
+        lblName.isUserInteractionEnabled = true
+        lblDescription.isUserInteractionEnabled = true
+        isEdit = true
+        }
+        else {
+            editButton.setTitle("Edit", for: [])
+            lblName.isUserInteractionEnabled = false
+            lblDescription.isUserInteractionEnabled = false
+            currentLocation?.changeInformation(name: lblName.text!, desc: lblDescription.text!)
+            print ("Location info: " + (currentLocation?.getDesc())!)
+            isEdit = false
+        }
+    }
+    
+    @IBAction func delete(sender: UIButton) {
+        GeneralLocationList.sharedInstance.locations.remove(object: currentLocation!)
+        currentLocation = GeneralLocationList.sharedInstance.locations[0]
+        lblName.text = currentLocation!.getName()
+        lblName.isUserInteractionEnabled = false
+        lblDescription.text = currentLocation!.getDesc()
+        lblDescription.isUserInteractionEnabled = false
+        img?.image = UIImage(named:currentLocation!.imageName)
+        checkWhetherDeleteIsEnabled()
+
+    }
+    
+    func checkWhetherDeleteIsEnabled() {
+        if GeneralLocationList.sharedInstance.locations.count <= 1 {
+            deleteButton.isHidden = true
+        }
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -53,8 +94,9 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
 
 extension GeneralLocationViewController: Refresh {
     func refresh (location: GeneralLocation) {
+        self.currentLocation = location
         self.lblName.text = location.locationName
         self.lblDescription.text = location.getDesc()
-        img?.image = UIImage(named:currentLocation!.imageName)
+        self.img?.image = UIImage(named:location.imageName)
     }
 }
