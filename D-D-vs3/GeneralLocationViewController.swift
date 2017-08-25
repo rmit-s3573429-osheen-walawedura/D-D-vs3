@@ -25,8 +25,6 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
     
     var isEdit = false
     
-    var tableController: GeneralLocationTableViewController!
-    
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {

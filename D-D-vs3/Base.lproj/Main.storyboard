@@ -326,6 +326,9 @@
                                                         <state key="normal" title="Edit">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="editWithSender:" destination="2If-JX-A6E" eventType="touchUpInside" id="hOg-tR-sYL"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dH-gB-T05">
                                                         <rect key="frame" x="207" y="0.0" width="207" height="33"/>
@@ -334,6 +337,9 @@
                                                         <state key="normal" title="Delete">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="deleteWithSender:" destination="2If-JX-A6E" eventType="touchUpInside" id="QbV-yE-1fq"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>

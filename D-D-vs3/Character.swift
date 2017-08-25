@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Character {
+class Character : Equatable {
     
     var characterName: String
     var characterSpecies: String
@@ -24,6 +24,19 @@ class Character {
         characterDescription = desc
         characterRolePlayNotes = notes
         imageName = image
-        location.assignOwner(character: self)
+        characterLocation.assignOwner(character: self)
+    }
+    
+    func changeCharacterInfo(name: String, species: String, desc: String, notes: String, image: String) {
+        characterName = name
+        characterSpecies = species
+        characterDescription = desc
+        characterRolePlayNotes = notes
+        imageName = image
+        characterLocation.assignOwner(character: self)
+    }
+    
+    static func ==(char1: Character, char2: Character) -> Bool {
+        return ObjectIdentifier(char1) == ObjectIdentifier(char2)
     }
 }

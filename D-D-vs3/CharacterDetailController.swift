@@ -19,11 +19,64 @@ class CharacterDetailController: UIViewController {
     
     var currentCharacter: Character?
     
+    @IBOutlet weak var editButton: UIButton!
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    var isEdit = false
+    
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        setAllFieldValues()
+        setAllFieldsToFalse()
+    }
+    
+    // Lifecycle method for clearing up memory resources
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // Respond to the user clicking a button by providing advice from the oracle
+    @IBAction func edit(sender: UIButton)
+    {
+        if isEdit == false {
+            editButton.setTitle("Confirm", for: [])
+            lblName.isUserInteractionEnabled = true
+            lblSpecies.isUserInteractionEnabled = true
+            lblSpecificLocation.isUserInteractionEnabled = true
+            lblNotes.isUserInteractionEnabled = true
+            txtDescription.isUserInteractionEnabled = true
+            isEdit = true
+        }
+        else {
+            editButton.setTitle("Edit", for: [])
+            setAllFieldsToFalse()
+            isEdit = false
+        }
+    }
+    
+    @IBAction func delete(sender: UIButton) {
+        CharacterList.sharedInstance.characters.remove(object: currentCharacter!)
+        currentCharacter = CharacterList.sharedInstance.characters[0]
+        setAllFieldsToFalse()
+        setAllFieldValues()
+        checkWhetherDeleteIsEnabled()
+    }
+    
+    func setAllFieldsToFalse() {
+        lblName.isUserInteractionEnabled = false
+        lblSpecies.isUserInteractionEnabled = false
+        lblSpecificLocation.isUserInteractionEnabled = false
+        lblNotes.isUserInteractionEnabled = false
+        txtDescription.isUserInteractionEnabled = false
+    }
+    
+    func setAllFieldValues() {
         lblName.text = currentCharacter?.characterName
         lblSpecies.setTitle(currentCharacter?.characterSpecies, for: [])
         lblSpecificLocation.text = currentCharacter?.characterLocation.getName()
@@ -32,11 +85,10 @@ class CharacterDetailController: UIViewController {
         img.image = UIImage(named: (currentCharacter?.imageName)!)
     }
     
-    // Lifecycle method for clearing up memory resources
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func checkWhetherDeleteIsEnabled() {
+        if GeneralLocationList.sharedInstance.locations.count <= 1 {
+            deleteButton.isHidden = true
+        }
     }
 }
 
