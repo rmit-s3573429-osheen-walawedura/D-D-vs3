@@ -55,6 +55,7 @@ class CharacterDetailController: UIViewController {
         }
         else {
             editButton.setTitle("Edit", for: [])
+            currentCharacter?.changeCharacterInfo(name: lblName.text!, species: lblSpecies.titleLabel!.text!, desc: txtDescription.text, notes: lblNotes.text, location: lblSpecificLocation.text!)
             setAllFieldsToFalse()
             isEdit = false
         }
@@ -79,7 +80,7 @@ class CharacterDetailController: UIViewController {
     func setAllFieldValues() {
         lblName.text = currentCharacter?.characterName
         lblSpecies.setTitle(currentCharacter?.characterSpecies, for: [])
-        lblSpecificLocation.text = currentCharacter?.characterLocation.getName()
+        lblSpecificLocation.text = currentCharacter?.characterLocation
         lblNotes.text = currentCharacter?.characterRolePlayNotes
         txtDescription.text = currentCharacter?.characterDescription
         img.image = UIImage(named: (currentCharacter?.imageName)!)
@@ -98,7 +99,7 @@ extension CharacterDetailController: RefreshCharacter {
         self.txtDescription.text = character.characterDescription
         self.lblSpecies.setTitle(character.characterSpecies, for: [])
         self.lblNotes.text = character.characterRolePlayNotes
-        self.lblSpecificLocation.text = character.characterLocation.getName()
+        self.lblSpecificLocation.text = character.characterLocation
         self.img.image = UIImage(named: (character.imageName))
 }
 }

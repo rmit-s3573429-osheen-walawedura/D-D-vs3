@@ -12,28 +12,28 @@ class Character : Equatable {
     
     var characterName: String
     var characterSpecies: String
-    var characterLocation: SpecificLocation
+    var characterLocation: String
     var characterDescription: String
     var characterRolePlayNotes: String
     var imageName: String
     
-    init(name: String, species: String, location: SpecificLocation, desc: String, notes: String, image: String) {
+    init(name: String, species: String, location: String, desc: String, notes: String, image: String) {
         characterName = name
         characterSpecies = species
         characterLocation = location
         characterDescription = desc
         characterRolePlayNotes = notes
         imageName = image
-        characterLocation.assignOwner(character: self)
+        characterLocation = location
     }
     
-    func changeCharacterInfo(name: String, species: String, desc: String, notes: String, image: String) {
+    func changeCharacterInfo(name: String, species: String, desc: String, notes: String, location: String) {
         characterName = name
         characterSpecies = species
         characterDescription = desc
         characterRolePlayNotes = notes
-        imageName = image
-        characterLocation.assignOwner(character: self)
+        characterLocation = location
+
     }
     
     static func ==(char1: Character, char2: Character) -> Bool {

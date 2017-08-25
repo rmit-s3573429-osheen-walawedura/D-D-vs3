@@ -372,6 +372,8 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Ee0-qe-ymR"/>
                     <connections>
+                        <outlet property="deleteButton" destination="9dH-gB-T05" id="DzJ-Cy-VGr"/>
+                        <outlet property="editButton" destination="k9O-7W-iKn" id="Z3a-SZ-e7Y"/>
                         <outlet property="img" destination="0BS-Jn-Tu9" id="sOn-fB-gda"/>
                         <outlet property="lblName" destination="LL4-zT-uIG" id="2Ra-Vb-Nq7"/>
                         <outlet property="lblNotes" destination="xci-tW-O9j" id="toD-ax-zPg"/>

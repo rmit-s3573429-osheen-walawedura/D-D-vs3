@@ -32,12 +32,15 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
         // textView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         lblName.text = currentLocation!.getName()
-        lblName.isUserInteractionEnabled = false
         lblDescription.text = currentLocation!.getDesc()
-        lblDescription.isUserInteractionEnabled = false
         img?.image = UIImage(named:currentLocation!.imageName)
         checkWhetherDeleteIsEnabled()
+        setAllFieldsToNonInteractable()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setAllFieldsToNonInteractable()
     }
     
     // Lifecycle method for clearing up memory resources
@@ -47,7 +50,12 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    // Respond to the user clicking a button by providing advice from the oracle
+    func setAllFieldsToNonInteractable() {
+        lblName.isUserInteractionEnabled = false
+        lblDescription.isUserInteractionEnabled = false
+    }
+    
+    // Respond to the user clicking the edit button
     @IBAction func edit(sender: UIButton)
     {
         if isEdit == false {
@@ -58,8 +66,7 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
         }
         else {
             editButton.setTitle("Edit", for: [])
-            lblName.isUserInteractionEnabled = false
-            lblDescription.isUserInteractionEnabled = false
+            setAllFieldsToNonInteractable()
             currentLocation?.changeInformation(name: lblName.text!, desc: lblDescription.text!)
             print ("Location info: " + (currentLocation?.getDesc())!)
             isEdit = false
@@ -69,10 +76,9 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
     @IBAction func delete(sender: UIButton) {
         GeneralLocationList.sharedInstance.locations.remove(object: currentLocation!)
         currentLocation = GeneralLocationList.sharedInstance.locations[0]
+        setAllFieldsToNonInteractable()
         lblName.text = currentLocation!.getName()
-        lblName.isUserInteractionEnabled = false
         lblDescription.text = currentLocation!.getDesc()
-        lblDescription.isUserInteractionEnabled = false
         img?.image = UIImage(named:currentLocation!.imageName)
         checkWhetherDeleteIsEnabled()
 
@@ -96,5 +102,6 @@ extension GeneralLocationViewController: Refresh {
         self.lblName.text = location.locationName
         self.lblDescription.text = location.getDesc()
         self.img?.image = UIImage(named:location.imageName)
+        setAllFieldsToNonInteractable()
     }
 }
