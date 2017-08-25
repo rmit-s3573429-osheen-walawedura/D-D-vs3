@@ -52,7 +52,7 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
     
     func setAllFieldsToNonInteractable() {
         lblName.isUserInteractionEnabled = false
-        lblDescription.isUserInteractionEnabled = false
+        lblDescription.isEditable = false
     }
     
     // Respond to the user clicking the edit button
@@ -61,7 +61,7 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
         if isEdit == false {
         editButton.setTitle("Confirm", for: [])
         lblName.isUserInteractionEnabled = true
-        lblDescription.isUserInteractionEnabled = true
+        lblDescription.isEditable = true
         isEdit = true
         }
         else {

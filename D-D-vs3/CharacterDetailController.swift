@@ -51,6 +51,8 @@ class CharacterDetailController: UIViewController {
             lblSpecificLocation.isUserInteractionEnabled = true
             lblNotes.isUserInteractionEnabled = true
             txtDescription.isUserInteractionEnabled = true
+            txtDescription.isEditable = true
+            lblNotes.isEditable = true
             isEdit = true
         }
         else {
@@ -71,10 +73,10 @@ class CharacterDetailController: UIViewController {
     
     func setAllFieldsToFalse() {
         lblName.isUserInteractionEnabled = false
-        lblSpecies.isUserInteractionEnabled = false
         lblSpecificLocation.isUserInteractionEnabled = false
-        lblNotes.isUserInteractionEnabled = false
-        txtDescription.isUserInteractionEnabled = false
+        lblNotes.isEditable = false
+        txtDescription.isEditable = false
+        lblSpecies.isEnabled = true
     }
     
     func setAllFieldValues() {
@@ -87,7 +89,7 @@ class CharacterDetailController: UIViewController {
     }
     
     func checkWhetherDeleteIsEnabled() {
-        if GeneralLocationList.sharedInstance.locations.count <= 1 {
+        if CharacterList.sharedInstance.characters.count <= 1 {
             deleteButton.isHidden = true
         }
     }

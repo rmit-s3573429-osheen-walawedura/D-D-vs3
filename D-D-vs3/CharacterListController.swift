@@ -33,6 +33,13 @@ class CharacterListController: UITableViewController, UISearchResultsUpdating
         tableView.tableHeaderView = searchController.searchBar
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+        super.viewDidAppear(animated)
+        
+    }
+    
     //returning the number of items in the array to populate tablerows
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
