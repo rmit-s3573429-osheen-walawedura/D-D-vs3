@@ -27,6 +27,8 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
     
     let imagePicker=UIImagePickerController()
     
+    var tapGesture=UITapGestureRecognizer()
+    
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {
@@ -39,26 +41,27 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
         checkWhetherDeleteIsEnabled()
         setAllFieldsToNonInteractable()
         
+        //setting up tap gesture control
+//        img?.isUserInteractionEnabled=true
+//        tapGesture=UITapGestureRecognizer(target: self, action: #selector(GeneralLocationViewController.changeImage))
+//        self.img?.addGestureRecognizer(tapGesture)
+//        imagePicker.delegate = self
     }
     
-    //function to invoke imgage change with tap
-    func changeImage() {
-        //setting up tap gesture control
-        img?.isUserInteractionEnabled=true
-        let tapGesture=UITapGestureRecognizer(target: self, action: #selector(GeneralLocationViewController.changeImage))
-        self.img?.addGestureRecognizer(tapGesture)
-        imageTapped(tapGesture)
-        imagePicker.delegate = self
-        print("image tapped")
-    }
+    //function to invoke image change with tap
+//    func changeImage() {
+//        imageTapped(tapGesture)
+//    }
     
     //setting the actions for the UIImagePickerController
     @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
+        imagePicker.delegate = self
         imagePicker.allowsEditing=false
         imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
-        
-        print("tapped")
+        if isEdit == true{
+            present(imagePicker, animated: true, completion: nil)
+              print("image tapped for editing")
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -102,7 +105,6 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
         editButton.setTitle("Confirm", for: [])
         lblName.isUserInteractionEnabled = true
         lblDescription.isEditable = true
-            changeImage()
         isEdit = true
         }
         else {
