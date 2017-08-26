@@ -40,9 +40,7 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
             img?.image = UIImage(named:currentCharacter!.imageName)
         }
         else {
-            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
-            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
-            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            let paths               = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
             
             if let dirPath          = paths.first
             {
@@ -51,13 +49,14 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
                 
             }
         }
+        
         checkWhetherDeleteIsEnabled()
         setAllFieldsToNonInteractable()
+        setAllFieldValues()
+        setAllFieldsToFalse()
         
         isEdit = false
         
-        setAllFieldValues()
-        setAllFieldsToFalse()
     }
     
       //setting the actions for the UIImagePickerController
@@ -139,9 +138,6 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
         let imgURL = docDir.appendingPathComponent("asset-"+lblName.text!+".jpg")
         try! imageData?.write(to: imgURL)
         
-        
-        print(imgURL)
-        
         img?.image = UIImage(contentsOfFile: imgURL.path)!
         
     }
@@ -181,24 +177,21 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
         lblSpecificLocation.text = currentCharacter?.characterLocation
         lblNotes.text = currentCharacter?.characterRolePlayNotes
         txtDescription.text = currentCharacter?.characterDescription
-//        img.image = UIImage(named: (currentCharacter?.imageName)!)
         
         if currentCharacter!.imageName.contains("asset_"){
-            img?.image = UIImage(named:(currentCharacter?.imageName)!)
+            img?.image = UIImage(named:currentCharacter!.imageName)
         }
-        else{
-            //loading edited image
-            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
-            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
-            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
-            if let dirPath          = paths.first
+        else {
+            let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+            
+            if let dirPath = paths.first
             {
-                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+lblName.text!+".jpg")
-                self.img?.image   = UIImage(contentsOfFile: imageURL.path)
+                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+(currentCharacter?.getName())!+".jpg")
+                img?.image = UIImage(contentsOfFile: imageURL.path)
                 
             }
-            
         }
+        
     }
     
     func checkWhetherDeleteIsEnabled() {

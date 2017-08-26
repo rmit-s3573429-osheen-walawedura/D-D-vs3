@@ -66,10 +66,8 @@ class CharacterListController: UITableViewController, UISearchResultsUpdating
             row?.imageView?.image = UIImage(named: character.imageName)
         }
         else{
-            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
-            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
-            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
-            if let dirPath          = paths.first
+            let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+            if let dirPath = paths.first
             {
                 let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+character.getName()+".jpg")
                 row?.imageView?.image   = UIImage(contentsOfFile: imageURL.path)

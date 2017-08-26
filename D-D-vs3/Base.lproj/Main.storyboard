@@ -49,7 +49,8 @@
                                         </accessibility>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="414" id="IMi-CD-6iU"/>
+                                            <constraint firstAttribute="height" constant="414" id="5fe-Dc-0So"/>
+                                            <constraint firstAttribute="width" constant="414" id="jh9-Pw-Z9x"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="Rvy-fZ-uNl" appends="YES" id="pZV-dx-ZcI"/>
@@ -61,7 +62,8 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="locationName" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WZj-Sp-VgC">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="4Dy-5N-nPY"/>
+                                                    <constraint firstAttribute="height" constant="30" id="OXC-bk-eHz"/>
+                                                    <constraint firstAttribute="width" constant="414" id="va5-Go-WgJ"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -84,7 +86,7 @@
                                                         <rect key="frame" x="0.0" y="27" width="207" height="33"/>
                                                         <color key="backgroundColor" red="0.80406007123160617" green="0.42788156751170664" blue="0.51023833782276484" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="207" id="tBh-bO-4o5"/>
+                                                            <constraint firstAttribute="width" constant="207" id="kyv-j1-4I6"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Edit">
@@ -107,21 +109,30 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="Hf3-u8-hLE" firstAttribute="top" secondItem="mhu-A5-pZZ" secondAttribute="top" constant="27" id="87Q-XH-vCE"/>
+                                                    <constraint firstItem="qVc-1R-oEh" firstAttribute="width" secondItem="Hf3-u8-hLE" secondAttribute="width" id="wUe-nu-6hs"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="MqV-bs-JwP" firstAttribute="width" secondItem="WZj-Sp-VgC" secondAttribute="width" id="02I-fY-IPT"/>
+                                            <constraint firstAttribute="width" secondItem="bnU-S7-fox" secondAttribute="height" multiplier="414:209" id="0X4-1d-CD7"/>
+                                            <constraint firstItem="dNs-XT-6Hu" firstAttribute="width" secondItem="WZj-Sp-VgC" secondAttribute="width" id="BhI-MH-h9J"/>
+                                            <constraint firstItem="dNs-XT-6Hu" firstAttribute="height" secondItem="WZj-Sp-VgC" secondAttribute="height" id="vUa-Tm-kyd"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ajv-X7-IIT" firstAttribute="centerX" secondItem="9me-eN-fay" secondAttribute="centerX" id="OmJ-kh-Dom"/>
+                                </constraints>
                                 <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9me-eN-fay" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="22c-On-GeG"/>
-                            <constraint firstItem="9me-eN-fay" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="43X-Ke-vCs"/>
-                            <constraint firstItem="9me-eN-fay" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="C71-qR-rKD"/>
-                            <constraint firstAttribute="trailing" secondItem="9me-eN-fay" secondAttribute="trailing" id="g5b-Ca-AyA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9me-eN-fay" secondAttribute="bottom" id="Of5-c1-Cfb"/>
+                            <constraint firstItem="9me-eN-fay" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z33-dG-fYm"/>
+                            <constraint firstAttribute="trailing" secondItem="9me-eN-fay" secondAttribute="trailing" id="l7h-lO-YPA"/>
+                            <constraint firstItem="9me-eN-fay" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tbM-fS-hMt"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -273,7 +284,7 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HF8-gw-Fdb">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asset_human_male" translatesAutoresizingMaskIntoConstraints="NO" id="0BS-Jn-Tu9">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0BS-Jn-Tu9">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="314"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -544,7 +555,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="asset_human_male" width="649" height="1000"/>
         <image name="asset_phandalin" width="269" height="187"/>
         <image name="dragonborn_female" width="576" height="720"/>
     </resources>

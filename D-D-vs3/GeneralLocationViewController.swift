@@ -37,20 +37,20 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
         super.viewDidLoad()
         lblName.text = currentLocation!.getName()
         lblDescription.text = currentLocation!.getDesc()
+        
         if currentLocation!.imageName.contains("asset_"){
             img?.image = UIImage(named:currentLocation!.imageName)
         }
         else {
-            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
-            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
-            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
-            if let dirPath          = paths.first
+            let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+            if let dirPath = paths.first
             {
                 let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+(currentLocation?.getName())!+".jpg")
                 img?.image = UIImage(contentsOfFile: imageURL.path)
             
             }
         }
+        
         checkWhetherDeleteIsEnabled()
         setAllFieldsToNonInteractable()
         isEdit = false
@@ -147,7 +147,18 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
         setAllFieldsToNonInteractable()
         lblName.text = currentLocation!.getName()
         lblDescription.text = currentLocation!.getDesc()
-        img?.image = UIImage(named:currentLocation!.imageName)
+        if currentLocation!.imageName.contains("asset_"){
+            img?.image = UIImage(named:currentLocation!.imageName)
+        }
+        else {
+            let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+            if let dirPath = paths.first
+            {
+                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+(currentLocation?.getName())!+".jpg")
+                img?.image = UIImage(contentsOfFile: imageURL.path)
+                
+            }
+        }
         checkWhetherDeleteIsEnabled()
 
     }
@@ -173,18 +184,14 @@ extension GeneralLocationViewController: Refresh {
         if currentLocation!.imageName.contains("asset_"){
             img?.image = UIImage(named:currentLocation!.imageName)
         }
-        else{
-            //loading edited image
-            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
-            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
-            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
-            if let dirPath          = paths.first
+        else {
+            let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+            if let dirPath = paths.first
             {
-                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+lblName.text!+".jpg")
-                self.img?.image   = UIImage(contentsOfFile: imageURL.path)
+                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+(currentLocation?.getName())!+".jpg")
+                img?.image = UIImage(contentsOfFile: imageURL.path)
                 
             }
-
         }
         
         setAllFieldsToNonInteractable()
