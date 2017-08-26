@@ -27,12 +27,37 @@ class Character : Equatable {
         characterLocation = location
     }
     
-    func changeCharacterInfo(name: String, species: String, desc: String, notes: String, location: String) {
+    func getName() -> String {
+        return characterName
+    }
+    
+    func getDesc() -> String {
+        return characterDescription
+    }
+    
+    func getSpecies() -> String {
+        return characterSpecies
+    }
+    
+    func getNotes() -> String {
+        return characterRolePlayNotes
+    }
+    
+    func getImage() -> String {
+        return imageName
+    }
+    
+    func getLocation() -> String {
+        return characterLocation
+    }
+    
+    func changeCharacterInfo(name: String, species: String, desc: String, notes: String, location: String, img: String) {
         characterName = name
         characterSpecies = species
         characterDescription = desc
         characterRolePlayNotes = notes
         characterLocation = location
+        imageName = img
 
     }
     

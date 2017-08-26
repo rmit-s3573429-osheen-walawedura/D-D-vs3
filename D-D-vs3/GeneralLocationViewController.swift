@@ -29,7 +29,6 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
     
     var imgPath = NSURL()
     
-    var imgName = String()
     
     
     // Lifecycle method for performing tasks after the view has loaded
@@ -123,7 +122,6 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
             editButton.setTitle("Edit", for: [])
             setAllFieldsToNonInteractable()
             
-            
             //saving chosen image to directory
             saveImageToDirectory()
             currentLocation?.changeInformation(name: lblName.text!, desc: lblDescription.text!, img: ("asset-"+lblName.text!+".jpg"))
@@ -138,8 +136,6 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
         let docDir = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let imgURL = docDir.appendingPathComponent("asset-"+lblName.text!+".jpg")
         try! imageData?.write(to: imgURL)
-        
-        print(imgURL)
         
         img?.image = UIImage(contentsOfFile: imgURL.path)!
      

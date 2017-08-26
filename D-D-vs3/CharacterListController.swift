@@ -60,7 +60,22 @@ class CharacterListController: UITableViewController, UISearchResultsUpdating
         // Configure the cell
         row?.textLabel!.text = character.characterName
         row?.detailTextLabel!.text = character.characterSpecies
-        row?.imageView?.image = UIImage(named: character.imageName)
+//        row?.imageView?.image = UIImage(named: character.imageName)
+        
+        if character.imageName.contains("asset_"){
+            row?.imageView?.image = UIImage(named: character.imageName)
+        }
+        else{
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            if let dirPath          = paths.first
+            {
+                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+character.getName()+".jpg")
+                row?.imageView?.image   = UIImage(contentsOfFile: imageURL.path)
+            }
+        }
+
         row?.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         
         return row!

@@ -20,30 +20,55 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
     var currentCharacter: Character?
     
     @IBOutlet weak var editButton: UIButton!
-    
     @IBOutlet weak var deleteButton: UIButton!
     
     var isEdit = false
     
+    var imgPath = NSURL()
+
     let imagePicker=UIImagePickerController()
     
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        lblName.text = currentCharacter!.getName()
+        txtDescription.text = currentCharacter!.getDesc()
+        
+        if currentCharacter!.imageName.contains("asset_"){
+            img?.image = UIImage(named:currentCharacter!.imageName)
+        }
+        else {
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            
+            if let dirPath          = paths.first
+            {
+                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+(currentCharacter?.getName())!+".jpg")
+                img?.image = UIImage(contentsOfFile: imageURL.path)
+                
+            }
+        }
+        checkWhetherDeleteIsEnabled()
+        setAllFieldsToNonInteractable()
+        
+        isEdit = false
+        
         setAllFieldValues()
         setAllFieldsToFalse()
     }
     
-    
-    //setting the actions for the UIImagePickerController
-    @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
+      //setting the actions for the UIImagePickerController
+    @IBAction func changeImage(_ sender: UITapGestureRecognizer) {
         imagePicker.delegate = self
         imagePicker.allowsEditing=false
         imagePicker.sourceType = .photoLibrary
         if isEdit == true{
-            present(imagePicker, animated: true, completion: nil)
+            self.addChildViewController(imagePicker)
+            imagePicker.didMove(toParentViewController: self)
+            self.view!.addSubview(imagePicker.view!)
         }
     }
     
@@ -53,21 +78,26 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
             UIImage{
             img?.contentMode = .scaleAspectFit
             img?.image = pickedImage
+            
+            //getting image path
+            imgPath = (info[UIImagePickerControllerReferenceURL] as! NSURL)
+            
         }
         
-        dismiss(animated: true, completion: nil)
+        imagePicker.view!.removeFromSuperview()
+        imagePicker.removeFromParentViewController()
     }
     
     //imagepicker cancel operation
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
+    {        imagePicker.view!.removeFromSuperview()
+        imagePicker.removeFromParentViewController()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         editButton.setTitle("Edit", for: [] )
         isEdit = false
-        print ("is editing")
-        setAllFieldsToFalse()
+        setAllFieldsToNonInteractable()
     }
     
     // Lifecycle method for clearing up memory resources
@@ -93,11 +123,41 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
         }
         else {
             editButton.setTitle("Edit", for: [])
-            currentCharacter?.changeCharacterInfo(name: lblName.text!, species: lblSpecies.titleLabel!.text!, desc: txtDescription.text, notes: lblNotes.text, location: lblSpecificLocation.text!)
+            
+            //saving chosen image to directory
+            saveImageToDirectory()
+            currentCharacter?.changeCharacterInfo(name: lblName.text!, species: lblSpecies.titleLabel!.text!, desc: txtDescription.text, notes: lblNotes.text, location: lblSpecificLocation.text!, img: ("asset-"+lblName.text!+".jpg"))
             setAllFieldsToFalse()
             isEdit = false
         }
     }
+    
+    //function to save chosen image
+    func saveImageToDirectory() {
+        let imageData = UIImageJPEGRepresentation((img?.image!)!,1.0)
+        let docDir = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let imgURL = docDir.appendingPathComponent("asset-"+lblName.text!+".jpg")
+        try! imageData?.write(to: imgURL)
+        
+        
+        print(imgURL)
+        
+        img?.image = UIImage(contentsOfFile: imgURL.path)!
+        
+    }
+    
+    //sets all fields to non-changeable
+    func setAllFieldsToNonInteractable() {
+        lblName.isUserInteractionEnabled = false
+        lblSpecies.isUserInteractionEnabled = false
+        lblSpecificLocation.isUserInteractionEnabled = false
+        lblNotes.isUserInteractionEnabled = false
+        txtDescription.isUserInteractionEnabled = false
+        txtDescription.isEditable = false
+        lblNotes.isEditable = false
+    }
+    
+
     
     @IBAction func delete(sender: UIButton) {
         CharacterList.sharedInstance.characters.remove(object: currentCharacter!)
@@ -121,7 +181,24 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
         lblSpecificLocation.text = currentCharacter?.characterLocation
         lblNotes.text = currentCharacter?.characterRolePlayNotes
         txtDescription.text = currentCharacter?.characterDescription
-        img.image = UIImage(named: (currentCharacter?.imageName)!)
+//        img.image = UIImage(named: (currentCharacter?.imageName)!)
+        
+        if currentCharacter!.imageName.contains("asset_"){
+            img?.image = UIImage(named:(currentCharacter?.imageName)!)
+        }
+        else{
+            //loading edited image
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            if let dirPath          = paths.first
+            {
+                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+lblName.text!+".jpg")
+                self.img?.image   = UIImage(contentsOfFile: imageURL.path)
+                
+            }
+            
+        }
     }
     
     func checkWhetherDeleteIsEnabled() {
