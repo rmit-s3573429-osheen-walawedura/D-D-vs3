@@ -34,6 +34,13 @@ class CharacterDetailController: UIViewController {
         setAllFieldsToFalse()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        editButton.setTitle("Edit", for: [] )
+        isEdit = false
+        print ("is editing")
+        setAllFieldsToFalse()
+    }
+    
     // Lifecycle method for clearing up memory resources
     override func didReceiveMemoryWarning()
     {

@@ -40,6 +40,9 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        editButton.setTitle("Edit", for: [] )
+        isEdit = false
+        print ("is editing")
         setAllFieldsToNonInteractable()
     }
     
