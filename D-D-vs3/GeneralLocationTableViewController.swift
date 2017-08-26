@@ -63,18 +63,11 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
         row?.isAccessibilityElement = true
         row?.textLabel!.text = location.getName()
         row?.detailTextLabel!.text = location.locationType
-//        row?.imageView?.image = UIImage(named: location.imageName)
         
         if location.imageName.contains("asset_"){
                 row?.imageView?.image = UIImage(named: location.imageName)
         }
         else{
-            
-//            Bundle.main.path(forResource: "asset", ofType: "jpg")
-//            let fileManager = FileManager.default
-//            let imageURL = try! fileManager.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-           
-            
                         let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
                         let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
                         let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
@@ -82,8 +75,6 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
                         {
                             let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+location.getName()+".jpg")
                             row?.imageView?.image   = UIImage(contentsOfFile: imageURL.path)
-                        
-            print ("Path" + imageURL.path)
             }
         }
         

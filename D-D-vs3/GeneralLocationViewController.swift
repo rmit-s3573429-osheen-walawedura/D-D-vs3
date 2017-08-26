@@ -64,7 +64,6 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
         imagePicker.allowsEditing=false
         imagePicker.sourceType = .photoLibrary
         if isEdit == true{
-//            present(imagePicker, animated: true, completion: nil)
             self.addChildViewController(imagePicker)
             imagePicker.didMove(toParentViewController: self)
             self.view!.addSubview(imagePicker.view!)
@@ -80,7 +79,6 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
             
             //getting image path
             imgPath = (info[UIImagePickerControllerReferenceURL] as! NSURL)
-            print ("Img Path: " + imgPath.absoluteString!)
       
         }
 
@@ -89,7 +87,7 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
     }
     
     //imagepicker cancel operation
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
     {        imagePicker.view!.removeFromSuperview()
         imagePicker.removeFromParentViewController()
     }
@@ -97,7 +95,6 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
     override func viewDidAppear(_ animated: Bool) {
         editButton.setTitle("Edit", for: [] )
         isEdit = false
-        print ("is editing")
         setAllFieldsToNonInteractable()
     }
     
@@ -129,10 +126,8 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
             
             //saving chosen image to directory
             saveImageToDirectory()
-            
-            currentLocation?.changeInformation(name: lblName.text!, desc: lblDescription.text!, img: imgPath)
-           
-            print ("Img Name " + imgName)
+            currentLocation?.changeInformation(name: lblName.text!, desc: lblDescription.text!, img: ("asset-"+lblName.text!+".jpg"))
+    
             isEdit = false
         }
     }
@@ -189,7 +184,7 @@ extension GeneralLocationViewController: Refresh {
             let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
             if let dirPath          = paths.first
             {
-                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(imgName)
+                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+lblName.text!+".jpg")
                 self.img?.image   = UIImage(contentsOfFile: imageURL.path)
                 
             }

@@ -40,11 +40,10 @@ class GeneralLocation: Equatable {
         return imageName
     }
     
-    func changeInformation(name: String, desc: String, img: NSURL) {
+    func changeInformation(name: String, desc: String, img: String) {
         locationDesc = desc
         locationName = name
-        imageName = img.lastPathComponent!
-        print("edit image name: "+imageName)
+        imageName = img
     }
     
     static func ==(location: GeneralLocation, place: GeneralLocation) -> Bool {
