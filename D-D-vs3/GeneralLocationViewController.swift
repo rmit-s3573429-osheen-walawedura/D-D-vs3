@@ -160,7 +160,6 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
         print("file saved")
     }
     
-    
     @IBAction func delete(sender: UIButton) {
         GeneralLocationList.sharedInstance.locations.remove(object: currentLocation!)
         currentLocation = GeneralLocationList.sharedInstance.locations[0]

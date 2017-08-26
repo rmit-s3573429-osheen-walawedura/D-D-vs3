@@ -33,6 +33,7 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
         print(model.locations.count)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
+        searchController.isAccessibilityElement = true
         tableView.tableHeaderView = searchController.searchBar
     }
     
@@ -59,6 +60,7 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
         let location : GeneralLocation = changeDataSource(indexPath: indexPath as NSIndexPath)
         
         // Configure the cell
+        row?.isAccessibilityElement = true
         row?.textLabel!.text = location.getName()
         row?.detailTextLabel!.text = location.locationType
 //        row?.imageView?.image = UIImage(named: location.imageName)
@@ -81,25 +83,15 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
         
     }
     
-    override func prepare (for segue: UIStoryboardSegue, sender: Any?)
-    {
-        // Grab the current location
-        let indexPath = self.tableView.indexPathForSelectedRow!
-        let chosenLocation : GeneralLocation = changeDataSource(indexPath: indexPath as NSIndexPath)
-        
-        // Set a property on the destination view controller
-        let detailsVC = segue.destination as! GeneralLocationViewController
-        
-        detailsVC.currentLocation = chosenLocation
-    }
-    
     func changeDataSource(indexPath: NSIndexPath) -> GeneralLocation {
         var chosenLocation: GeneralLocation
         if searchController.isActive && searchController.searchBar.text != "" {
             chosenLocation = filteredLocations[indexPath.row]
+            print ("Searching filtered list")
         }
         else {
             chosenLocation = model.locations[indexPath.row]
+            print ("Not searching filtered list")
         }
         return chosenLocation
     }
@@ -118,8 +110,7 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        currentLocation = self.model.locations[indexPath.row]
-        
+        currentLocation = changeDataSource(indexPath: indexPath as NSIndexPath)
         // This points to our detail View controller so we are setting the property on the detail view
         // when we select a card in our master view.
         self.delegate?.refresh(location: currentLocation!)

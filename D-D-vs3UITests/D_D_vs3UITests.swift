@@ -84,5 +84,59 @@ class D_D_vs3UITests: XCTestCase {
         XCTAssertEqual(notes.value as! String,"Gruff voice. Likes carpentry.")
         XCTAssertTrue(app.images["asset_dwarf_male"].exists)    }
 
+    func testSearchLocations()
+    {
+        let app = XCUIApplication()
+        let generalLocationsButton = app.navigationBars["General Locations"].buttons["General Locations"]
+        generalLocationsButton.tap()
+        
+        //how many elements currently in list
+        let numberOfCells = app.tables.cells.count
+        XCTAssertEqual(numberOfCells, 3)
+        
+        app.tables.searchFields["Search"].tap()
+        app.searchFields["Search"].typeText("dry")
+        let afterSearchCells = app.tables.cells.count
+        XCTAssertEqual(afterSearchCells, 1)
+
+        
+        app.tables.staticTexts["Dry River"].tap()
+        
+        let textField = XCUIApplication().children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element.value as! String
+        XCTAssertEqual(textField, "Dry River")
+
+        
+    }
     
+    func testSearchCharacters() {
+        let app = XCUIApplication()
+        
+        app.tabBars.buttons["Characters"].tap()
+        
+        let charactersListButton = app.navigationBars["Characters"].buttons["Characters"]
+        charactersListButton.tap()
+        
+        //how many elements currently in list
+        let numberOfCells = app.tables.cells.count
+        XCTAssertEqual(numberOfCells, 2)
+        
+        app.tables.searchFields["Search"].tap()
+        app.searchFields["Search"].typeText("Gun")
+        let afterSearchCells = app.tables.cells.count
+        XCTAssertEqual(afterSearchCells, 1)
+        
+        
+        app.tables.staticTexts["Gundren Rockseeker"].tap()
+        
+        
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        element.tap()
+        
+        let characterPage = element.children(matching: .other).element
+        let name = characterPage.children(matching: .textField).element(boundBy: 0)
+        let nameValue = name.value as! String
+        
+        XCTAssertEqual(nameValue, "Gundren Rockseeker")
+
+    }
 }

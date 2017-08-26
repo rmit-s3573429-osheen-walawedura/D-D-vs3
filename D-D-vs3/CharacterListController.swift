@@ -66,20 +66,7 @@ class CharacterListController: UITableViewController, UISearchResultsUpdating
         return row!
         
     }
-    
-    override func prepare (for segue: UIStoryboardSegue, sender: Any?)
-    {
-        print("Trying to segue")
-        // Grab the current location
-        let indexPath = self.tableView.indexPathForSelectedRow!
-        let chosenCharacter : Character = changeDataSource(indexPath: indexPath as NSIndexPath)
-        
-        // Set a property on the destination view controller
-        let detailsVC = segue.destination as! CharacterDetailController
-        
-        detailsVC.currentCharacter = chosenCharacter
-    }
-    
+
     func changeDataSource(indexPath: NSIndexPath) -> Character {
         var chosenCharacter: Character
         if searchController.isActive && searchController.searchBar.text != "" {
@@ -105,7 +92,7 @@ class CharacterListController: UITableViewController, UISearchResultsUpdating
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        currentCharacter = self.model.characters[indexPath.row]
+        currentCharacter = changeDataSource(indexPath: indexPath as NSIndexPath)
         
         // This points to our detail View controller so we are setting the property on the detail view
         // when we select a card in our master view.
