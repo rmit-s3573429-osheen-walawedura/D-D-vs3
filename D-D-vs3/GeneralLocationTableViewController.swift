@@ -61,7 +61,20 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
         // Configure the cell
         row?.textLabel!.text = location.getName()
         row?.detailTextLabel!.text = location.locationType
-        row?.imageView?.image = UIImage(named: location.imageName)
+//        row?.imageView?.image = UIImage(named: location.imageName)
+        
+        if location.imageName.contains("asset_"){
+                row?.imageView?.image = UIImage(named: location.imageName)
+        }
+        else{
+            
+            Bundle.main.path(forResource: "asset", ofType: "jpg")
+            let fileManager = FileManager.default
+            let imageURL = try! fileManager.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            row?.imageView?.image=UIImage(contentsOfFile: imageURL.path)
+            print ("Path" + imageURL.path)
+        }
+        
         row?.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         
         return row!

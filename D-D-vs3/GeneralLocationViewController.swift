@@ -38,7 +38,25 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
         super.viewDidLoad()
         lblName.text = currentLocation!.getName()
         lblDescription.text = currentLocation!.getDesc()
-        img?.image = UIImage(named:currentLocation!.imageName)
+        if currentLocation!.imageName.contains("asset_"){
+            img?.image = UIImage(named:currentLocation!.imageName)
+        }
+        else {
+//            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+//            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+//            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+//            if let dirPath          = paths.first
+//            {
+//                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(imgName)
+//                self.img?.image   = UIImage(contentsOfFile: imageURL.path)
+//            }
+            
+            Bundle.main.path(forResource: "asset", ofType: "jpg")
+            let fileManager = FileManager.default
+            let imageURL = try! fileManager.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            self.img?.image=UIImage(contentsOfFile: imageURL.path)
+            
+        }
         checkWhetherDeleteIsEnabled()
         setAllFieldsToNonInteractable()
         isEdit = false
@@ -67,6 +85,7 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
             
             //getting image path
             imgPath = (info[UIImagePickerControllerReferenceURL] as! NSURL)
+            print ("Img Path: " + imgPath.absoluteString!)
             imgName = imgPath.lastPathComponent!
             print(imgName)
             print(imgPath)
@@ -171,15 +190,21 @@ extension GeneralLocationViewController: Refresh {
         self.lblName.text = location.locationName
         self.lblDescription.text = location.getDesc()
         
-        //loading edited image
-        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
-        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
-        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
-        if let dirPath          = paths.first
-        {
-            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(imgName)
-            self.img?.image   = UIImage(contentsOfFile: imageURL.path)
-           
+        if currentLocation!.imageName.contains("asset_"){
+            img?.image = UIImage(named:currentLocation!.imageName)
+        }
+        else{
+            //loading edited image
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            if let dirPath          = paths.first
+            {
+                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(imgName)
+                self.img?.image   = UIImage(contentsOfFile: imageURL.path)
+                
+            }
+
         }
         
         setAllFieldsToNonInteractable()

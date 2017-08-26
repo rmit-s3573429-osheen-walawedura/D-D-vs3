@@ -83,16 +83,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setUpData() {
-        GeneralLocationList.sharedInstance.addNewGeneralLocation(name:"Phandalin",type:"City",desc:"The town consisted of forty or fifty simple log buildings, some build on old fieldstone foundations. More old ruins - crumbling stone walls covered in ivy and briars - surround the newer buildings.", image:"phandalin")
+        GeneralLocationList.sharedInstance.addNewGeneralLocation(name:"Phandalin",type:"City",desc:"The town consisted of forty or fifty simple log buildings, some build on old fieldstone foundations. More old ruins - crumbling stone walls covered in ivy and briars - surround the newer buildings.", image:"asset_phandalin")
         var location1: GeneralLocation = GeneralLocationList.sharedInstance.locations[0]
-        location1.addNewLocation(name:"Stonehill Inn", type:"Inn", address:"Somewhere in Phandalin", desc:"Toblen came from the east of the Triboar, seeking the opportunity in prospecting like many others. He soon found that he knew more about running an inn than mining, and so he established the inn.", image:"inn")
+        location1.addNewLocation(name:"Stonehill Inn", type:"Inn", address:"Somewhere in Phandalin", desc:"Toblen came from the east of the Triboar, seeking the opportunity in prospecting like many others. He soon found that he knew more about running an inn than mining, and so he established the inn.", image:"asset_inn")
         var character1 = Character(name: "Aram Silverheart", species: "Human", location: "Aram's Traders", desc: "An old human, bent and bowed. He carries a walking stick in his left hand, but something suggests he might use it for more than walking", notes: "Gruff voice. Likes carpentry.", image:"human_male")
         CharacterList.sharedInstance.addCharacterToList(char: character1)
-        GeneralLocationList.sharedInstance.locations[0].addNewLocation(name:"The Sleeping Giant", type:"Tavern", address:"Somewhere in Phandalin", desc:"An old crumbling stone building with boarded up windows.",image:"inn")
-        var character2 = Character(name: "Gundren Rockseeker", species: "Dwarf", location: "The Sleeping Giant", desc: "An dwarf in the prime of his life.", notes: "Gruff voice. Likes carpentry.",image:"dwarf_male")
+        GeneralLocationList.sharedInstance.locations[0].addNewLocation(name:"The Sleeping Giant", type:"Tavern", address:"Somewhere in Phandalin", desc:"An old crumbling stone building with boarded up windows.",image:"asset_inn")
+        var character2 = Character(name: "Gundren Rockseeker", species: "Dwarf", location: "The Sleeping Giant", desc: "An dwarf in the prime of his life.", notes: "Gruff voice. Likes carpentry.",image:"asset_dwarf_male")
         CharacterList.sharedInstance.addCharacterToList(char: character2)
-                GeneralLocationList.sharedInstance.addNewGeneralLocation(name:"Stormy Mountains",type:"City",desc:"The town consisted of forty or fifty simple log buildings, some build on old fieldstone foundations. More old ruins - crumbling stone walls covered in ivy and briars - surround the newer buildings.", image:"phandalin")
-                GeneralLocationList.sharedInstance.addNewGeneralLocation(name:"Dry River",type:"City",desc:"The town consisted of forty or fifty simple log buildings, some build on old fieldstone foundations. More old ruins - crumbling stone walls covered in ivy and briars - surround the newer buildings.", image:"phandalin")
+                GeneralLocationList.sharedInstance.addNewGeneralLocation(name:"Stormy Mountains",type:"City",desc:"A low mist settled over rock mountains and shimmered in the predawn light.", image:"asset_hill")
+                GeneralLocationList.sharedInstance.addNewGeneralLocation(name:"Dry River",type:"City",desc:"The town consisted of forty or fifty simple log buildings, some build on old fieldstone foundations. More old ruins - crumbling stone walls covered in ivy and briars - surround the newer buildings.", image:"asset_cafe")
         
     }
     
