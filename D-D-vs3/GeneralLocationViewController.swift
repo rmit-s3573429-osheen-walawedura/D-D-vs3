@@ -116,13 +116,31 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
             editButton.setTitle("Edit", for: [])
             setAllFieldsToNonInteractable()
             
-            //capturing image URL
-            currentLocation?.changeInformation(name: lblName.text!, desc: lblDescription.text!, img: imgName)
             
-            print ("Location info: " + (currentLocation?.getDesc())!)
+            //saving chosen image to directory
+            saveImageToDirectory()
+            
+            currentLocation?.changeInformation(name: lblName.text!, desc: lblDescription.text!, img: imgPath)
+           
+            print ("Img Name " + imgName)
             isEdit = false
         }
     }
+    
+    //function to save chosen image
+    func saveImageToDirectory() {
+        let imageData = UIImageJPEGRepresentation((img?.image!)!,1.0)
+        let docDir = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let imgURL = docDir.appendingPathComponent(imgName)
+        try! imageData?.write(to: imgURL)
+        
+        print(imgURL)
+        
+        img?.image = UIImage(contentsOfFile: imgURL.path)!
+        
+        print("file saved")
+    }
+    
     
     @IBAction func delete(sender: UIButton) {
         GeneralLocationList.sharedInstance.locations.remove(object: currentLocation!)
@@ -152,7 +170,18 @@ extension GeneralLocationViewController: Refresh {
         self.currentLocation = location
         self.lblName.text = location.locationName
         self.lblDescription.text = location.getDesc()
-        self.img?.image = UIImage(named:location.imageName)
+        
+        //loading edited image
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        if let dirPath          = paths.first
+        {
+            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(imgName)
+            self.img?.image   = UIImage(contentsOfFile: imageURL.path)
+           
+        }
+        
         setAllFieldsToNonInteractable()
     }
 }
