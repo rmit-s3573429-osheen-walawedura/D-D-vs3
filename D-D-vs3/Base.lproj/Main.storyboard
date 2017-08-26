@@ -84,7 +84,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="locationEdit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf3-u8-hLE">
                                                         <rect key="frame" x="0.0" y="27" width="207" height="33"/>
-                                                        <color key="backgroundColor" red="0.22652111520000001" green="0.27415254020000002" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.80406007123160617" green="0.42788156751170664" blue="0.51023833782276484" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="207" id="kyv-j1-4I6"/>
                                                         </constraints>
@@ -98,7 +98,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVc-1R-oEh">
                                                         <rect key="frame" x="207" y="27" width="207" height="33"/>
-                                                        <color key="backgroundColor" red="0.22652111520000001" green="0.27415254020000002" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.8040600712" green="0.4278815675" blue="0.51023833780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Delete">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -121,6 +121,9 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ajv-X7-IIT" firstAttribute="centerX" secondItem="9me-eN-fay" secondAttribute="centerX" id="OmJ-kh-Dom"/>
+                                </constraints>
                                 <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
                         </subviews>
@@ -183,7 +186,7 @@
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="dragonborn_female" id="UXq-St-r0f">
                                             <rect key="frame" x="15" y="0.0" width="35" height="43.666666666666664"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -204,9 +207,10 @@
         <scene sceneID="uHI-LR-qvo">
             <objects>
                 <navigationController id="VEs-ZU-tNJ" userLabel="General Location Navigation Controller" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dep-rV-k8O">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Dep-rV-k8O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.67974821890000003" green="0.2418194773" blue="0.2779702691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="uhF-Kl-wsA" kind="relationship" relationship="rootViewController" id="DjA-cT-FdW"/>
@@ -224,6 +228,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.67974821890000003" green="0.2418194773" blue="0.2779702691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="bOh-sy-9Ka" kind="relationship" relationship="viewControllers" id="xem-aa-UYM"/>
@@ -333,7 +338,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9O-7W-iKn">
                                                         <rect key="frame" x="0.0" y="0.0" width="207" height="33"/>
-                                                        <color key="backgroundColor" red="0.22652111520000001" green="0.27415254020000002" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.8040600712" green="0.4278815675" blue="0.51023833780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="207" id="LhA-2O-RMd"/>
                                                             <constraint firstAttribute="height" constant="33" id="wk9-m9-c8X"/>
@@ -348,7 +353,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dH-gB-T05">
                                                         <rect key="frame" x="207" y="0.0" width="207" height="33"/>
-                                                        <color key="backgroundColor" red="0.22652111520000001" green="0.27415254020000002" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.8040600712" green="0.4278815675" blue="0.51023833780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Delete">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -456,9 +461,10 @@
         <scene sceneID="2op-Xf-tFv">
             <objects>
                 <navigationController id="hcT-ai-vj9" userLabel="Characters Table Navigation Controller" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8eO-CB-OqZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8eO-CB-OqZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.67974821890000003" green="0.2418194773" blue="0.2779702691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="KM4-Kf-iYY" kind="relationship" relationship="rootViewController" id="ba0-nO-7Ki"/>

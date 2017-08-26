@@ -42,20 +42,15 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
             img?.image = UIImage(named:currentLocation!.imageName)
         }
         else {
-//            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
-//            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
-//            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
-//            if let dirPath          = paths.first
-//            {
-//                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent(imgName)
-//                self.img?.image   = UIImage(contentsOfFile: imageURL.path)
-//            }
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            if let dirPath          = paths.first
+            {
+                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+(currentLocation?.getName())!+".jpg")
+                img?.image = UIImage(contentsOfFile: imageURL.path)
             
-            Bundle.main.path(forResource: "asset", ofType: "jpg")
-            let fileManager = FileManager.default
-            let imageURL = try! fileManager.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            self.img?.image=UIImage(contentsOfFile: imageURL.path)
-            
+            }
         }
         checkWhetherDeleteIsEnabled()
         setAllFieldsToNonInteractable()
@@ -86,20 +81,16 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
             //getting image path
             imgPath = (info[UIImagePickerControllerReferenceURL] as! NSURL)
             print ("Img Path: " + imgPath.absoluteString!)
-            imgName = imgPath.lastPathComponent!
-            print(imgName)
-            print(imgPath)
+      
         }
-        
-//        dismiss(animated: true, completion: nil)
+
         imagePicker.view!.removeFromSuperview()
         imagePicker.removeFromParentViewController()
     }
     
     //imagepicker cancel operation
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        dismiss(animated: true, completion: nil)
-        imagePicker.view!.removeFromSuperview()
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController
+    {        imagePicker.view!.removeFromSuperview()
         imagePicker.removeFromParentViewController()
     }
     
@@ -150,14 +141,13 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
     func saveImageToDirectory() {
         let imageData = UIImageJPEGRepresentation((img?.image!)!,1.0)
         let docDir = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        let imgURL = docDir.appendingPathComponent(imgName)
+        let imgURL = docDir.appendingPathComponent("asset-"+lblName.text!+".jpg")
         try! imageData?.write(to: imgURL)
         
         print(imgURL)
         
         img?.image = UIImage(contentsOfFile: imgURL.path)!
-        
-        print("file saved")
+     
     }
     
     @IBAction func delete(sender: UIButton) {

@@ -70,11 +70,21 @@ class GeneralLocationTableViewController: UITableViewController, UISearchResults
         }
         else{
             
-            Bundle.main.path(forResource: "asset", ofType: "jpg")
-            let fileManager = FileManager.default
-            let imageURL = try! fileManager.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            row?.imageView?.image=UIImage(contentsOfFile: imageURL.path)
+//            Bundle.main.path(forResource: "asset", ofType: "jpg")
+//            let fileManager = FileManager.default
+//            let imageURL = try! fileManager.url(for:.documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+           
+            
+                        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+                        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+                        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+                        if let dirPath          = paths.first
+                        {
+                            let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+location.getName()+".jpg")
+                            row?.imageView?.image   = UIImage(contentsOfFile: imageURL.path)
+                        
             print ("Path" + imageURL.path)
+            }
         }
         
         row?.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
