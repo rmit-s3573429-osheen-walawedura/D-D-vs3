@@ -36,9 +36,10 @@ class GeneralLocation: Equatable {
         return locationDesc
     }
     
-    func changeInformation(name: String, desc: String) {
+    func changeInformation(name: String, desc: String, img: String) {
         locationDesc = desc
         locationName = name
+        imageName = img
     }
     
     static func ==(location: GeneralLocation, place: GeneralLocation) -> Bool {

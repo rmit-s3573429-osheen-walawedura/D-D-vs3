@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CharacterDetailController: UIViewController {
+class CharacterDetailController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     // labels
     @IBOutlet weak var lblName: UITextField!
     @IBOutlet weak var lblSpecies: UIButton!
@@ -25,6 +25,8 @@ class CharacterDetailController: UIViewController {
     
     var isEdit = false
     
+    let imagePicker=UIImagePickerController()
+    
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {
@@ -32,6 +34,33 @@ class CharacterDetailController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         setAllFieldValues()
         setAllFieldsToFalse()
+    }
+    
+    
+    //setting the actions for the UIImagePickerController
+    @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
+        imagePicker.delegate = self
+        imagePicker.allowsEditing=false
+        imagePicker.sourceType = .photoLibrary
+        if isEdit == true{
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    //assigning the changed image to thw imageView
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as?
+            UIImage{
+            img?.contentMode = .scaleAspectFit
+            img?.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //imagepicker cancel operation
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {

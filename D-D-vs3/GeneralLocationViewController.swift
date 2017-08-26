@@ -23,35 +23,27 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
     
     var currentLocation: GeneralLocation?
     
-    var isEdit = false
+    var isEdit = Bool()
     
     let imagePicker=UIImagePickerController()
     
-    var tapGesture=UITapGestureRecognizer()
+    var imgPath = NSURL()
+    
+    var imgName = String()
+    
     
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // textView.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
         lblName.text = currentLocation!.getName()
         lblDescription.text = currentLocation!.getDesc()
         img?.image = UIImage(named:currentLocation!.imageName)
         checkWhetherDeleteIsEnabled()
         setAllFieldsToNonInteractable()
-        
-        //setting up tap gesture control
-//        img?.isUserInteractionEnabled=true
-//        tapGesture=UITapGestureRecognizer(target: self, action: #selector(GeneralLocationViewController.changeImage))
-//        self.img?.addGestureRecognizer(tapGesture)
-//        imagePicker.delegate = self
+        isEdit = false
+
     }
-    
-    //function to invoke image change with tap
-//    func changeImage() {
-//        imageTapped(tapGesture)
-//    }
     
     //setting the actions for the UIImagePickerController
     @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
@@ -59,24 +51,37 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
         imagePicker.allowsEditing=false
         imagePicker.sourceType = .photoLibrary
         if isEdit == true{
-            present(imagePicker, animated: true, completion: nil)
-              print("image tapped for editing")
+//            present(imagePicker, animated: true, completion: nil)
+            self.addChildViewController(imagePicker)
+            imagePicker.didMove(toParentViewController: self)
+            self.view!.addSubview(imagePicker.view!)
         }
     }
     
+    //assigning the changed image to thw imageView
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as?
             UIImage{
             img?.contentMode = .scaleAspectFit
             img?.image = pickedImage
+            
+            //getting image path
+            imgPath = (info[UIImagePickerControllerReferenceURL] as! NSURL)
+            imgName = imgPath.lastPathComponent!
+            print(imgName)
+            print(imgPath)
         }
         
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        imagePicker.view!.removeFromSuperview()
+        imagePicker.removeFromParentViewController()
     }
     
     //imagepicker cancel operation
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        imagePicker.view!.removeFromSuperview()
+        imagePicker.removeFromParentViewController()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -110,7 +115,10 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
         else {
             editButton.setTitle("Edit", for: [])
             setAllFieldsToNonInteractable()
-            currentLocation?.changeInformation(name: lblName.text!, desc: lblDescription.text!)
+            
+            //capturing image URL
+            currentLocation?.changeInformation(name: lblName.text!, desc: lblDescription.text!, img: imgName)
+            
             print ("Location info: " + (currentLocation?.getDesc())!)
             isEdit = false
         }
