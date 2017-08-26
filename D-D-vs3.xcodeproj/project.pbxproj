@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8004B1CD1F511A6100066DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FE599D1F43507500E2D32A /* Main.storyboard */; };
 		803B40081F484FA1009FA510 /* GeneralLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B40071F484FA1009FA510 /* GeneralLocationTableViewController.swift */; };
 		803B400A1F487151009FA510 /* SpecificLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B40091F487151009FA510 /* SpecificLocationTableViewController.swift */; };
 		803B400C1F493848009FA510 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B400B1F493848009FA510 /* Character.swift */; };
@@ -304,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8004B1CD1F511A6100066DAA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

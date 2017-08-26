@@ -9,7 +9,7 @@
 
 import UIKit
 
-class GeneralLocationViewController: UIViewController, UITextViewDelegate {
+class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // label for the Name of the location
     @IBOutlet weak var lblName: UITextField!
     
@@ -25,6 +25,8 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
     
     var isEdit = false
     
+    let imagePicker=UIImagePickerController()
+    
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {
@@ -37,6 +39,41 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
         checkWhetherDeleteIsEnabled()
         setAllFieldsToNonInteractable()
         
+    }
+    
+    //function to invoke imgage change with tap
+    func changeImage() {
+        //setting up tap gesture control
+        img?.isUserInteractionEnabled=true
+        let tapGesture=UITapGestureRecognizer(target: self, action: #selector(GeneralLocationViewController.changeImage))
+        self.img?.addGestureRecognizer(tapGesture)
+        imageTapped(tapGesture)
+        imagePicker.delegate = self
+        print("image tapped")
+    }
+    
+    //setting the actions for the UIImagePickerController
+    @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
+        imagePicker.allowsEditing=false
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+        
+        print("tapped")
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as?
+            UIImage{
+            img?.contentMode = .scaleAspectFit
+            img?.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //imagepicker cancel operation
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,6 +102,7 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate {
         editButton.setTitle("Confirm", for: [])
         lblName.isUserInteractionEnabled = true
         lblDescription.isEditable = true
+            changeImage()
         isEdit = true
         }
         else {

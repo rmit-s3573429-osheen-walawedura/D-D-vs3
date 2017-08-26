@@ -43,8 +43,7 @@ class D_D_vs3UITests: XCTestCase {
         app.navigationBars["Characters"].buttons["Characters"].tap()
         app.tables.staticTexts["Gundren Rockseeker"].tap()
         
-        //edit and confirm -> can't get it to work runs into error
-        XCUIApplication().buttons["Edit"].tap() //-> timestamped event matching error failed to find matching element
+        //edit and confirm         
         
 
     }

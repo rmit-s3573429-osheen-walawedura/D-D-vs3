@@ -44,10 +44,18 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phandalin" translatesAutoresizingMaskIntoConstraints="NO" id="Ajv-X7-IIT">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" image="YES" allowsDirectInteraction="YES"/>
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="414" id="5fe-Dc-0So"/>
                                             <constraint firstAttribute="width" constant="414" id="jh9-Pw-Z9x"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Rvy-fZ-uNl" appends="YES" id="pZV-dx-ZcI"/>
+                                        </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bnU-S7-fox" userLabel="Details Stack">
                                         <rect key="frame" x="0.0" y="414" width="414" height="209"/>
@@ -136,6 +144,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Rvy-fZ-uNl">
+                    <connections>
+                        <action selector="imageTapped:" destination="BYZ-38-t0r" id="04p-8g-Q3o"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-959.4202898550725" y="316.304347826087"/>
         </scene>
