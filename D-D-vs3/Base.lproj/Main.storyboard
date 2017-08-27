@@ -122,6 +122,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="bnU-S7-fox" firstAttribute="top" secondItem="Ajv-X7-IIT" secondAttribute="bottom" id="B8S-CE-Xd9"/>
                                     <constraint firstItem="Ajv-X7-IIT" firstAttribute="centerX" secondItem="9me-eN-fay" secondAttribute="centerX" id="OmJ-kh-Dom"/>
                                 </constraints>
                                 <variation key="heightClass=compact" axis="horizontal"/>
@@ -130,6 +131,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9me-eN-fay" secondAttribute="bottom" id="Of5-c1-Cfb"/>
+                            <constraint firstItem="Ajv-X7-IIT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="YHP-xm-sLT"/>
                             <constraint firstItem="9me-eN-fay" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Z33-dG-fYm"/>
                             <constraint firstAttribute="trailing" secondItem="9me-eN-fay" secondAttribute="trailing" id="l7h-lO-YPA"/>
                             <constraint firstItem="9me-eN-fay" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tbM-fS-hMt"/>
@@ -171,21 +173,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8kk-g0-C1l">
-                                            <rect key="frame" x="70" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="65" y="5" width="33.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kj0-pM-cAx">
-                                            <rect key="frame" x="70" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="65" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="dragonborn_female" id="UXq-St-r0f">
-                                            <rect key="frame" x="20" y="0.0" width="35" height="43.666666666666664"/>
+                                            <rect key="frame" x="15" y="0.0" width="35" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -429,21 +431,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JLA-Tk-EG7">
-                                            <rect key="frame" x="70" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="65" y="5" width="33.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oJ6-Ej-FEj">
-                                            <rect key="frame" x="70" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="65" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="dragonborn_female" id="PP7-lq-dEz">
-                                            <rect key="frame" x="20" y="0.0" width="35" height="43.666666666666664"/>
+                                            <rect key="frame" x="15" y="0.0" width="35" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
