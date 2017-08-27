@@ -32,7 +32,7 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        print("Loading character " + (currentCharacter?.characterName)!)
         lblName.text = currentCharacter!.getName()
         txtDescription.text = currentCharacter!.getDesc()
         
@@ -125,6 +125,7 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
             
             //saving chosen image to directory
             saveImageToDirectory()
+            print ("Updating character " + (currentCharacter?.characterName)!)
             currentCharacter?.changeCharacterInfo(name: lblName.text!, species: lblSpecies.titleLabel!.text!, desc: txtDescription.text, notes: lblNotes.text, location: lblSpecificLocation.text!, img: ("asset-"+lblName.text!+".jpg"))
             setAllFieldsToFalse()
             isEdit = false
@@ -203,6 +204,7 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
 
 extension CharacterDetailController: RefreshCharacter {
     func refresh (character: Character) {
+        self.currentCharacter = character
         self.lblName.text = character.characterName
         self.txtDescription.text = character.characterDescription
         self.lblSpecies.setTitle(character.characterSpecies, for: [])

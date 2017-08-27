@@ -90,7 +90,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Edit">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="editWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fr9-TR-cxw"/>
@@ -101,7 +101,7 @@
                                                         <color key="backgroundColor" red="0.8040600712" green="0.4278815675" blue="0.51023833780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Delete">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="deleteWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lfi-PL-EDd"/>
@@ -164,6 +164,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="8kk-g0-C1l" detailTextLabel="Kj0-pM-cAx" imageView="UXq-St-r0f" style="IBUITableViewCellStyleSubtitle" id="p7L-4s-kOq">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -209,10 +211,14 @@
         <scene sceneID="uHI-LR-qvo">
             <objects>
                 <navigationController id="VEs-ZU-tNJ" userLabel="General Location Navigation Controller" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dep-rV-k8O">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Dep-rV-k8O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="barTintColor" red="0.67974821890000003" green="0.2418194773" blue="0.2779702691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="uhF-Kl-wsA" kind="relationship" relationship="rootViewController" id="DjA-cT-FdW"/>
@@ -226,10 +232,11 @@
         <scene sceneID="GO2-i1-sel">
             <objects>
                 <tabBarController id="Dlc-v2-5p6" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="sAq-gA-bu0">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" id="sAq-gA-bu0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="barTintColor" red="0.67974821890000003" green="0.2418194773" blue="0.2779702691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
@@ -347,7 +354,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Edit">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="editWithSender:" destination="2If-JX-A6E" eventType="touchUpInside" id="hOg-tR-sYL"/>
@@ -358,7 +365,7 @@
                                                         <color key="backgroundColor" red="0.8040600712" green="0.4278815675" blue="0.51023833780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <state key="normal" title="Delete">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="deleteWithSender:" destination="2If-JX-A6E" eventType="touchUpInside" id="QbV-yE-1fq"/>

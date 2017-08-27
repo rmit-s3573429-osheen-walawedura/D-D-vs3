@@ -106,6 +106,7 @@ class CharacterListController: UITableViewController, UISearchResultsUpdating
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         currentCharacter = changeDataSource(indexPath: indexPath as NSIndexPath)
+        print ("List's currentCharacter is " + (currentCharacter?.characterName)!)
         
         // This points to our detail View controller so we are setting the property on the detail view
         // when we select a card in our master view.
