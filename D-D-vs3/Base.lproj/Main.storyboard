@@ -82,25 +82,23 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="mhu-A5-pZZ" userLabel="Options Stack">
                                                 <rect key="frame" x="0.0" y="149" width="414" height="60"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="locationEdit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf3-u8-hLE">
-                                                        <rect key="frame" x="0.0" y="27" width="207" height="33"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="locationEdit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf3-u8-hLE">
+                                                        <rect key="frame" x="0.0" y="30" width="207" height="30"/>
                                                         <color key="backgroundColor" red="0.80406007123160617" green="0.42788156751170664" blue="0.51023833782276484" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="207" id="kyv-j1-4I6"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="Edit">
+                                                        <state key="normal" title="Edit" image="Pencil">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="editWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fr9-TR-cxw"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVc-1R-oEh">
-                                                        <rect key="frame" x="207" y="27" width="207" height="33"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVc-1R-oEh">
+                                                        <rect key="frame" x="207" y="30" width="207" height="30"/>
                                                         <color key="backgroundColor" red="0.8040600712" green="0.4278815675" blue="0.51023833780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="Delete">
+                                                        <state key="normal" title="Delete" image="Bin">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -109,6 +107,7 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" secondItem="mhu-A5-pZZ" secondAttribute="height" multiplier="69:10" id="ac3-LG-vzL"/>
                                                     <constraint firstItem="qVc-1R-oEh" firstAttribute="width" secondItem="Hf3-u8-hLE" secondAttribute="width" id="wUe-nu-6hs"/>
                                                 </constraints>
                                             </stackView>
@@ -123,6 +122,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="bnU-S7-fox" firstAttribute="top" secondItem="Ajv-X7-IIT" secondAttribute="bottom" id="B8S-CE-Xd9"/>
+                                    <constraint firstAttribute="width" secondItem="9me-eN-fay" secondAttribute="height" multiplier="414:623" id="JMO-tI-05e"/>
                                     <constraint firstItem="Ajv-X7-IIT" firstAttribute="centerX" secondItem="9me-eN-fay" secondAttribute="centerX" id="OmJ-kh-Dom"/>
                                 </constraints>
                                 <variation key="heightClass=compact" axis="horizontal"/>
@@ -315,11 +315,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2r-YY-fRD">
                                                 <rect key="frame" x="0.0" y="33" width="414" height="33"/>
                                                 <state key="normal" title="Species"/>
-                                                <connections>
-                                                    <segue destination="wy0-Ic-24c" kind="popoverPresentation" popoverAnchorView="G2r-YY-fRD" id="Xnn-X9-New">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
-                                                </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Location" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q4Z-Jo-Qz7">
                                                 <rect key="frame" x="0.0" y="66" width="414" height="33"/>
@@ -345,26 +340,24 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="e8j-Lb-jTS" userLabel="Options Stack">
                                                 <rect key="frame" x="0.0" y="276" width="414" height="33"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9O-7W-iKn">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9O-7W-iKn">
                                                         <rect key="frame" x="0.0" y="0.0" width="207" height="33"/>
                                                         <color key="backgroundColor" red="0.8040600712" green="0.4278815675" blue="0.51023833780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="207" id="LhA-2O-RMd"/>
                                                             <constraint firstAttribute="height" constant="33" id="wk9-m9-c8X"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="Edit">
+                                                        <state key="normal" image="Pencil">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="editWithSender:" destination="2If-JX-A6E" eventType="touchUpInside" id="hOg-tR-sYL"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dH-gB-T05">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dH-gB-T05">
                                                         <rect key="frame" x="207" y="0.0" width="207" height="33"/>
                                                         <color key="backgroundColor" red="0.8040600712" green="0.4278815675" blue="0.51023833780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="Delete">
+                                                        <state key="normal" title="Delete" image="Bin">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
@@ -373,9 +366,9 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="e8j-Lb-jTS" secondAttribute="height" multiplier="138:11" id="Oc8-Ib-Y2a"/>
                                                     <constraint firstItem="9dH-gB-T05" firstAttribute="width" secondItem="k9O-7W-iKn" secondAttribute="width" id="hgg-7H-h7a"/>
                                                     <constraint firstItem="9dH-gB-T05" firstAttribute="height" secondItem="k9O-7W-iKn" secondAttribute="height" id="mwG-7e-wyv"/>
+                                                    <constraint firstAttribute="width" secondItem="e8j-Lb-jTS" secondAttribute="height" multiplier="138:11" id="zAH-WU-LxT"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -501,69 +494,10 @@
             </objects>
             <point key="canvasLocation" x="-2980" y="2226"/>
         </scene>
-        <!--Species Pop Up Controller-->
-        <scene sceneID="GVj-2Y-N0k">
-            <objects>
-                <viewController id="wy0-Ic-24c" customClass="SpeciesPopUpController" customModule="D_D_vs3" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VfX-pP-VOx"/>
-                        <viewControllerLayoutGuide type="bottom" id="60d-uT-FqD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dp8-7Z-GzA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wQr-Ts-lxr">
-                                <rect key="frame" x="40" y="108" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="62V-vb-urh">
-                                <rect key="frame" x="0.0" y="81" width="414" height="609"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVy-A5-fji">
-                                <rect key="frame" x="188" y="698" width="39" height="30"/>
-                                <state key="normal" title="Close"/>
-                                <connections>
-                                    <action selector="dismissWith_sender:" destination="wy0-Ic-24c" eventType="touchUpInside" id="aIu-N2-Qnb"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTe-Uz-3Ue">
-                                <rect key="frame" x="177" y="28" width="61" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="MTe-Uz-3Ue" firstAttribute="centerX" secondItem="dp8-7Z-GzA" secondAttribute="centerX" id="1MK-Xd-BW3"/>
-                            <constraint firstItem="62V-vb-urh" firstAttribute="leading" secondItem="dp8-7Z-GzA" secondAttribute="leadingMargin" constant="-20" id="56B-zt-G26"/>
-                            <constraint firstItem="MTe-Uz-3Ue" firstAttribute="top" secondItem="VfX-pP-VOx" secondAttribute="bottom" constant="8" id="9fz-iw-RuE"/>
-                            <constraint firstItem="UVy-A5-fji" firstAttribute="centerX" secondItem="dp8-7Z-GzA" secondAttribute="centerX" id="GbK-Bl-VWc"/>
-                            <constraint firstItem="UVy-A5-fji" firstAttribute="top" secondItem="62V-vb-urh" secondAttribute="bottom" constant="8" id="IRN-uX-UN1"/>
-                            <constraint firstItem="62V-vb-urh" firstAttribute="centerX" secondItem="dp8-7Z-GzA" secondAttribute="centerX" id="PSR-Zl-T9P"/>
-                            <constraint firstItem="62V-vb-urh" firstAttribute="top" secondItem="MTe-Uz-3Ue" secondAttribute="bottom" constant="23" id="ohs-3M-2ZZ"/>
-                            <constraint firstItem="60d-uT-FqD" firstAttribute="top" secondItem="UVy-A5-fji" secondAttribute="bottom" constant="8" id="uad-b3-EJ3"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="lblName" destination="MTe-Uz-3Ue" id="Gzh-xh-U7b"/>
-                        <outlet property="txtDescription" destination="62V-vb-urh" id="ahZ-5g-cCX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sKU-gM-p5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="305.79710144927537" y="2669.8369565217395"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="Bin" width="30" height="30"/>
+        <image name="Pencil" width="30" height="30"/>
         <image name="asset_phandalin" width="269" height="187"/>
         <image name="dragonborn_female" width="576" height="720"/>
     </resources>
