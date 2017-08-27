@@ -59,7 +59,9 @@ class D_D_vs3UITests: XCTestCase {
     
     func testDeleteCharacter() {
         let app = XCUIApplication()
-        app.tabBars.buttons["Characters"].tap()
+       
+        XCUIApplication().tabBars.children(matching: .button).element(boundBy: 1).tap()
+        
         
         let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
         element.tap()
@@ -74,7 +76,7 @@ class D_D_vs3UITests: XCTestCase {
         XCTAssertEqual(location.value as! String, "Aram's Traders")
         XCTAssertEqual(description.value as! String, "An old human, bent and bowed. He carries a walking stick in his left hand, but something suggests he might use it for more than walking")
         XCTAssertEqual(notes.value as! String,"Gruff voice. Likes carpentry.")
-        XCTAssertTrue(app.images["human_male"].exists)
+        XCTAssertTrue(app.images["asset_human_male"].exists)
         
         app.buttons["Delete"].tap()
 
@@ -111,8 +113,9 @@ class D_D_vs3UITests: XCTestCase {
     func testSearchCharacters() {
         let app = XCUIApplication()
         
-        app.tabBars.buttons["Characters"].tap()
+        XCUIApplication().tabBars.children(matching: .button).element(boundBy: 1).tap()
         
+
         let charactersListButton = app.navigationBars["Characters"].buttons["Characters"]
         charactersListButton.tap()
         

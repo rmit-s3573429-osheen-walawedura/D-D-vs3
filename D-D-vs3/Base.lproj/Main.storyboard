@@ -175,21 +175,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8kk-g0-C1l">
-                                            <rect key="frame" x="70" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="65" y="5" width="33.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kj0-pM-cAx">
-                                            <rect key="frame" x="70" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="65" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="dragonborn_female" id="UXq-St-r0f">
-                                            <rect key="frame" x="20" y="0.0" width="35" height="43.666666666666664"/>
+                                            <rect key="frame" x="15" y="0.0" width="35" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -232,12 +232,13 @@
         <scene sceneID="GO2-i1-sel">
             <objects>
                 <tabBarController id="Dlc-v2-5p6" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleAspectFit" id="sAq-gA-bu0">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="sAq-gA-bu0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="barTintColor" red="0.67974821890000003" green="0.2418194773" blue="0.2779702691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="bOh-sy-9Ka" kind="relationship" relationship="viewControllers" id="xem-aa-UYM"/>
@@ -252,7 +253,7 @@
         <scene sceneID="KWD-yx-CRd">
             <objects>
                 <splitViewController title="Locations Tab" id="bOh-sy-9Ka" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Locations" id="7vF-VL-N3A"/>
+                    <tabBarItem key="tabBarItem" title="" image="Location Tab" id="7vF-VL-N3A"/>
                     <connections>
                         <segue destination="VEs-ZU-tNJ" kind="relationship" relationship="masterViewController" id="khF-bh-pPy"/>
                         <segue destination="q03-v5-O0O" kind="relationship" relationship="detailViewController" id="7rm-Vg-O8q"/>
@@ -492,7 +493,7 @@
         <scene sceneID="KUU-rR-8jD">
             <objects>
                 <splitViewController title="Characters" id="cRs-Pe-Zj8" userLabel="Characters Split View Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Characters" id="iwN-UY-Nbr" userLabel="Item"/>
+                    <tabBarItem key="tabBarItem" title="" image="Characters Tab" id="iwN-UY-Nbr" userLabel="Item"/>
                     <connections>
                         <segue destination="hcT-ai-vj9" kind="relationship" relationship="masterViewController" id="3Iw-n4-FMQ"/>
                         <segue destination="HVT-Zi-1fY" kind="relationship" relationship="detailViewController" id="s6S-Ls-97F"/>
@@ -505,6 +506,8 @@
     </scenes>
     <resources>
         <image name="Bin" width="30" height="30"/>
+        <image name="Characters Tab" width="250" height="40"/>
+        <image name="Location Tab" width="250" height="40"/>
         <image name="Pencil" width="30" height="30"/>
         <image name="asset_phandalin" width="269" height="187"/>
         <image name="dragonborn_female" width="576" height="720"/>
