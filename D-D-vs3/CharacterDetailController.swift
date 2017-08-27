@@ -210,6 +210,23 @@ extension CharacterDetailController: RefreshCharacter {
         self.lblSpecies.setTitle(character.characterSpecies, for: [])
         self.lblNotes.text = character.characterRolePlayNotes
         self.lblSpecificLocation.text = character.characterLocation
-        self.img.image = UIImage(named: (character.imageName))
+//        self.img.image = UIImage(named: (character.imageName))
+        
+        if currentCharacter!.imageName.contains("asset_"){
+            img?.image = UIImage(named:currentCharacter!.imageName)
+        }
+        else {
+            let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+            
+            if let dirPath = paths.first
+            {
+                let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("asset-"+(currentCharacter?.getName())!+".jpg")
+                self.img?.image = UIImage(contentsOfFile: imageURL.path)
+                
+            }
+        }
+
 }
+    
 }
+

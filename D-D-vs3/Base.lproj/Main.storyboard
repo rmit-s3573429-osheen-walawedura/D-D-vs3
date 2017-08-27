@@ -175,21 +175,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8kk-g0-C1l">
-                                            <rect key="frame" x="65" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="70" y="5" width="33.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kj0-pM-cAx">
-                                            <rect key="frame" x="65" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="70" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="dragonborn_female" id="UXq-St-r0f">
-                                            <rect key="frame" x="15" y="0.0" width="35" height="43.666666666666664"/>
+                                            <rect key="frame" x="20" y="0.0" width="35" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -211,7 +211,7 @@
         <scene sceneID="uHI-LR-qvo">
             <objects>
                 <navigationController id="VEs-ZU-tNJ" userLabel="General Location Navigation Controller" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Dep-rV-k8O">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dep-rV-k8O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -266,9 +266,13 @@
         <scene sceneID="eNb-n9-OkM">
             <objects>
                 <navigationController id="HVT-Zi-1fY" userLabel="Characters Details Navigation Controller" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QON-W3-GdS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QON-W3-GdS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="2If-JX-A6E" kind="relationship" relationship="rootViewController" id="2CS-FK-aN9"/>
@@ -467,10 +471,14 @@
         <scene sceneID="2op-Xf-tFv">
             <objects>
                 <navigationController id="hcT-ai-vj9" userLabel="Characters Table Navigation Controller" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8eO-CB-OqZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8eO-CB-OqZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="barTintColor" red="0.67974821890000003" green="0.2418194773" blue="0.2779702691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="KM4-Kf-iYY" kind="relationship" relationship="rootViewController" id="ba0-nO-7Ki"/>
