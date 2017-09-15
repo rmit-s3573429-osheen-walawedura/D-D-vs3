@@ -29,6 +29,7 @@ class D_D_vs3UITests: XCTestCase {
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
    
     func testDeleteLocation() {
         // Use recording to get started writing UI tests.
@@ -110,6 +111,12 @@ class D_D_vs3UITests: XCTestCase {
 
         
     }
+=======
+    func testExample() {
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+>>>>>>> parent of 2d26036... ran UI testing, and recorded test steps
 =======
     func testExample() {
         // Use recording to get started writing UI tests.

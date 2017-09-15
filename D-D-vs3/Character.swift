@@ -25,6 +25,7 @@ class Character {
         characterRolePlayNotes = notes
         imageName = image
 <<<<<<< HEAD
+<<<<<<< HEAD
         characterLocation = location
     }
     
@@ -64,6 +65,9 @@ class Character {
     
     static func ==(char1: Character, char2: Character) -> Bool {
         return ObjectIdentifier(char1) == ObjectIdentifier(char2)
+=======
+        location.assignOwner(character: self)
+>>>>>>> parent of 2d26036... ran UI testing, and recorded test steps
 =======
         location.assignOwner(character: self)
 >>>>>>> parent of 2d26036... ran UI testing, and recorded test steps

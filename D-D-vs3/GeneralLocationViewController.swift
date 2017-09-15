@@ -33,6 +33,8 @@ class GeneralLocationViewController: UIViewController, UITextViewDelegate, UIIma
     
     var tableController: GeneralLocationTableViewController!
     
+    var tableController: GeneralLocationTableViewController!
+    
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {

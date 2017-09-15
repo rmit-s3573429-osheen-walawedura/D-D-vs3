@@ -20,6 +20,7 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
     var currentCharacter: Character?
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
@@ -31,10 +32,13 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
     
 =======
 >>>>>>> parent of 2d26036... ran UI testing, and recorded test steps
+=======
+>>>>>>> parent of 2d26036... ran UI testing, and recorded test steps
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {
         super.viewDidLoad()
+<<<<<<< HEAD
 <<<<<<< HEAD
         print("Loading character " + (currentCharacter?.characterName)!)
         lblName.text = currentCharacter!.getName()
@@ -180,6 +184,9 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
 =======
         // Do any additional setup after loading the view, typically from a nib.
 >>>>>>> parent of 2d26036... ran UI testing, and recorded test steps
+=======
+        // Do any additional setup after loading the view, typically from a nib.
+>>>>>>> parent of 2d26036... ran UI testing, and recorded test steps
         lblName.text = currentCharacter?.characterName
         lblSpecies.setTitle(currentCharacter?.characterSpecies, for: [])
         lblSpecificLocation.text = currentCharacter?.characterLocation
@@ -203,16 +210,22 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     func checkWhetherDeleteIsEnabled() {
         if CharacterList.sharedInstance.characters.count <= 1 {
             deleteButton.isHidden = true
         }
 =======
+=======
+>>>>>>> parent of 2d26036... ran UI testing, and recorded test steps
     // Lifecycle method for clearing up memory resources
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+<<<<<<< HEAD
+>>>>>>> parent of 2d26036... ran UI testing, and recorded test steps
+=======
 >>>>>>> parent of 2d26036... ran UI testing, and recorded test steps
     }
 }
