@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		8004B1CD1F511A6100066DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FE599D1F43507500E2D32A /* Main.storyboard */; };
+		802BB0D61F6BBD630072EA8E /* D_D_vs3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59A01F43507500E2D32A /* D_D_vs3.xcdatamodeld */; };
+		802BB0FF1F6BD7D90072EA8E /* CharacterTypeT+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB0F71F6BD7D90072EA8E /* CharacterTypeT+CoreDataClass.swift */; };
+		802BB1001F6BD7D90072EA8E /* CharacterTypeT+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB0F81F6BD7D90072EA8E /* CharacterTypeT+CoreDataProperties.swift */; };
+		802BB1011F6BD7D90072EA8E /* CharacterT+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB0F91F6BD7D90072EA8E /* CharacterT+CoreDataClass.swift */; };
+		802BB1021F6BD7D90072EA8E /* CharacterT+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB0FA1F6BD7D90072EA8E /* CharacterT+CoreDataProperties.swift */; };
+		802BB1031F6BD7D90072EA8E /* GeneralLocationT+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB0FB1F6BD7D90072EA8E /* GeneralLocationT+CoreDataClass.swift */; };
+		802BB1041F6BD7D90072EA8E /* GeneralLocationT+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB0FC1F6BD7D90072EA8E /* GeneralLocationT+CoreDataProperties.swift */; };
+		802BB1051F6BD7D90072EA8E /* SpecificLocationT+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB0FD1F6BD7D90072EA8E /* SpecificLocationT+CoreDataClass.swift */; };
+		802BB1061F6BD7D90072EA8E /* SpecificLocationT+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB0FE1F6BD7D90072EA8E /* SpecificLocationT+CoreDataProperties.swift */; };
 		803B40081F484FA1009FA510 /* GeneralLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B40071F484FA1009FA510 /* GeneralLocationTableViewController.swift */; };
 		803B400A1F487151009FA510 /* SpecificLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B40091F487151009FA510 /* SpecificLocationTableViewController.swift */; };
 		803B400C1F493848009FA510 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803B400B1F493848009FA510 /* Character.swift */; };
@@ -21,7 +30,6 @@
 		80FE599A1F43507500E2D32A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59991F43507500E2D32A /* AppDelegate.swift */; };
 		80FE599C1F43507500E2D32A /* GeneralLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE599B1F43507500E2D32A /* GeneralLocationViewController.swift */; };
 		80FE599F1F43507500E2D32A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FE599D1F43507500E2D32A /* Main.storyboard */; };
-		80FE59A21F43507500E2D32A /* D_D_vs3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59A01F43507500E2D32A /* D_D_vs3.xcdatamodeld */; };
 		80FE59A71F43507500E2D32A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FE59A51F43507500E2D32A /* LaunchScreen.storyboard */; };
 		80FE59B21F43507500E2D32A /* D_D_vs3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59B11F43507500E2D32A /* D_D_vs3Tests.swift */; };
 		80FE59BD1F43507500E2D32A /* D_D_vs3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE59BC1F43507500E2D32A /* D_D_vs3UITests.swift */; };
@@ -47,6 +55,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		802BB0F71F6BD7D90072EA8E /* CharacterTypeT+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CharacterTypeT+CoreDataClass.swift"; path = "../CharacterTypeT+CoreDataClass.swift"; sourceTree = "<group>"; };
+		802BB0F81F6BD7D90072EA8E /* CharacterTypeT+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CharacterTypeT+CoreDataProperties.swift"; path = "../CharacterTypeT+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		802BB0F91F6BD7D90072EA8E /* CharacterT+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CharacterT+CoreDataClass.swift"; path = "../CharacterT+CoreDataClass.swift"; sourceTree = "<group>"; };
+		802BB0FA1F6BD7D90072EA8E /* CharacterT+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CharacterT+CoreDataProperties.swift"; path = "../CharacterT+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		802BB0FB1F6BD7D90072EA8E /* GeneralLocationT+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GeneralLocationT+CoreDataClass.swift"; path = "../GeneralLocationT+CoreDataClass.swift"; sourceTree = "<group>"; };
+		802BB0FC1F6BD7D90072EA8E /* GeneralLocationT+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GeneralLocationT+CoreDataProperties.swift"; path = "../GeneralLocationT+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		802BB0FD1F6BD7D90072EA8E /* SpecificLocationT+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SpecificLocationT+CoreDataClass.swift"; path = "../SpecificLocationT+CoreDataClass.swift"; sourceTree = "<group>"; };
+		802BB0FE1F6BD7D90072EA8E /* SpecificLocationT+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SpecificLocationT+CoreDataProperties.swift"; path = "../SpecificLocationT+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		803B40071F484FA1009FA510 /* GeneralLocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralLocationTableViewController.swift; sourceTree = "<group>"; };
 		803B40091F487151009FA510 /* SpecificLocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificLocationTableViewController.swift; sourceTree = "<group>"; };
 		803B400B1F493848009FA510 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
@@ -125,11 +141,11 @@
 				80FE59CA1F4351F500E2D32A /* Controllers */,
 				80FE59CB1F43520900E2D32A /* Models */,
 				80FE59991F43507500E2D32A /* AppDelegate.swift */,
+				80FE59A01F43507500E2D32A /* D_D_vs3.xcdatamodeld */,
 				80FE599D1F43507500E2D32A /* Main.storyboard */,
 				80FE59A51F43507500E2D32A /* LaunchScreen.storyboard */,
 				805C1C381F5271BF00C6F2DE /* Assets.xcassets */,
 				80FE59A81F43507500E2D32A /* Info.plist */,
-				80FE59A01F43507500E2D32A /* D_D_vs3.xcdatamodeld */,
 			);
 			path = "D-D-vs3";
 			sourceTree = "<group>";
@@ -174,6 +190,14 @@
 				80EC43051F4443DD007D2937 /* SpecificLocation.swift */,
 				803B400B1F493848009FA510 /* Character.swift */,
 				803B400D1F4939E4009FA510 /* CharacterList.swift */,
+				802BB0F71F6BD7D90072EA8E /* CharacterTypeT+CoreDataClass.swift */,
+				802BB0F81F6BD7D90072EA8E /* CharacterTypeT+CoreDataProperties.swift */,
+				802BB0F91F6BD7D90072EA8E /* CharacterT+CoreDataClass.swift */,
+				802BB0FA1F6BD7D90072EA8E /* CharacterT+CoreDataProperties.swift */,
+				802BB0FB1F6BD7D90072EA8E /* GeneralLocationT+CoreDataClass.swift */,
+				802BB0FC1F6BD7D90072EA8E /* GeneralLocationT+CoreDataProperties.swift */,
+				802BB0FD1F6BD7D90072EA8E /* SpecificLocationT+CoreDataClass.swift */,
+				802BB0FE1F6BD7D90072EA8E /* SpecificLocationT+CoreDataProperties.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -316,20 +340,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				802BB1001F6BD7D90072EA8E /* CharacterTypeT+CoreDataProperties.swift in Sources */,
 				80EC430A1F444667007D2937 /* SpecificDetailController.swift in Sources */,
+				802BB1051F6BD7D90072EA8E /* SpecificLocationT+CoreDataClass.swift in Sources */,
+				802BB1061F6BD7D90072EA8E /* SpecificLocationT+CoreDataProperties.swift in Sources */,
 				803B40121F49422C009FA510 /* CharacterListController.swift in Sources */,
+				802BB1011F6BD7D90072EA8E /* CharacterT+CoreDataClass.swift in Sources */,
+				802BB1021F6BD7D90072EA8E /* CharacterT+CoreDataProperties.swift in Sources */,
 				803B40101F49409B009FA510 /* CharacterDetailController.swift in Sources */,
+				802BB1041F6BD7D90072EA8E /* GeneralLocationT+CoreDataProperties.swift in Sources */,
+				802BB0FF1F6BD7D90072EA8E /* CharacterTypeT+CoreDataClass.swift in Sources */,
 				80EC43061F4443DD007D2937 /* SpecificLocation.swift in Sources */,
 				80FE599C1F43507500E2D32A /* GeneralLocationViewController.swift in Sources */,
 				803B400E1F4939E4009FA510 /* CharacterList.swift in Sources */,
 				80FE599A1F43507500E2D32A /* AppDelegate.swift in Sources */,
 				80FE59D11F4353D400E2D32A /* GeneralLocationList.swift in Sources */,
-				80FE59A21F43507500E2D32A /* D_D_vs3.xcdatamodeld in Sources */,
 				803B40141F4A88CC009FA510 /* SpeciesPopUpController.swift in Sources */,
 				80FE59CD1F4352E200E2D32A /* GeneralLocation.swift in Sources */,
 				803B400C1F493848009FA510 /* Character.swift in Sources */,
 				803B400A1F487151009FA510 /* SpecificLocationTableViewController.swift in Sources */,
+				802BB0D61F6BBD630072EA8E /* D_D_vs3.xcdatamodeld in Sources */,
 				803B40081F484FA1009FA510 /* GeneralLocationTableViewController.swift in Sources */,
+				802BB1031F6BD7D90072EA8E /* GeneralLocationT+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

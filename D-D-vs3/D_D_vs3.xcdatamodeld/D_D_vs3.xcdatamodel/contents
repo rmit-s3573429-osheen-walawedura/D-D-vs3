@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CharacterT" representedClassName="CharacterT" parentEntity="CharacterTypeT" syncable="YES">
+        <attribute name="characterID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="characterName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="characterTypeRef" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="specificLocationID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="characterType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CharacterTypeT" syncable="YES"/>
+        <relationship name="specLocation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpecificLocationT" syncable="YES"/>
+    </entity>
+    <entity name="CharacterTypeT" representedClassName="CharacterTypeT" syncable="YES">
+        <attribute name="characterTypeID" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="typeDesc" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="GeneralLocationT" representedClassName="GeneralLocationT" syncable="YES">
+        <attribute name="genImagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genLocationDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genLocationName" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <entity name="SpecificLocationT" representedClassName="SpecificLocationT" parentEntity="GeneralLocationT" syncable="YES">
+        <attribute name="genLocationRef" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="locationType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="spcImagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="specLocationDesc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="specLocationID" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="genLocation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GeneralLocationT" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GeneralLocationT" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="SpecificLocationT" positionX="-36" positionY="36" width="128" height="135"/>
+        <element name="CharacterT" positionX="-18" positionY="90" width="128" height="150"/>
+        <element name="CharacterTypeT" positionX="0" positionY="126" width="128" height="75"/>
+    </elements>
 </model>
