@@ -19,6 +19,7 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
     
     var currentCharacter: Character?
     
+<<<<<<< HEAD
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
@@ -28,10 +29,13 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
 
     let imagePicker=UIImagePickerController()
     
+=======
+>>>>>>> parent of 2d26036... ran UI testing, and recorded test steps
     // Lifecycle method for performing tasks after the view has loaded
     override func viewDidLoad()
     {
         super.viewDidLoad()
+<<<<<<< HEAD
         print("Loading character " + (currentCharacter?.characterName)!)
         lblName.text = currentCharacter!.getName()
         txtDescription.text = currentCharacter!.getDesc()
@@ -173,6 +177,9 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
     }
     
     func setAllFieldValues() {
+=======
+        // Do any additional setup after loading the view, typically from a nib.
+>>>>>>> parent of 2d26036... ran UI testing, and recorded test steps
         lblName.text = currentCharacter?.characterName
         lblSpecies.setTitle(currentCharacter?.characterSpecies, for: [])
         lblSpecificLocation.text = currentCharacter?.characterLocation
@@ -195,10 +202,18 @@ class CharacterDetailController: UIViewController , UIImagePickerControllerDeleg
         
     }
     
+<<<<<<< HEAD
     func checkWhetherDeleteIsEnabled() {
         if CharacterList.sharedInstance.characters.count <= 1 {
             deleteButton.isHidden = true
         }
+=======
+    // Lifecycle method for clearing up memory resources
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+>>>>>>> parent of 2d26036... ran UI testing, and recorded test steps
     }
 }
 

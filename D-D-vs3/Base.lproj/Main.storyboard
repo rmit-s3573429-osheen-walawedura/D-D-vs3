@@ -355,9 +355,6 @@
                                                         <state key="normal" image="Pencil">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="editWithSender:" destination="2If-JX-A6E" eventType="touchUpInside" id="hOg-tR-sYL"/>
-                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dH-gB-T05">
                                                         <rect key="frame" x="207" y="0.0" width="207" height="33"/>
@@ -365,9 +362,6 @@
                                                         <state key="normal" title="Delete" image="Bin">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
-                                                        <connections>
-                                                            <action selector="deleteWithSender:" destination="2If-JX-A6E" eventType="touchUpInside" id="QbV-yE-1fq"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
